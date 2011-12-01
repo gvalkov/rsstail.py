@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title> pip_python2.6 all builds</title>
+    <link type="text/html" href="http://ci.cloudsilverlining.org/view/pip/job/pip_python2.6/" rel="alternate"/>
+
+    <updated> 2012-01-05T10:41:45Z</updated>
+    <author>
+        <name> Hudson Server</name>
+    </author>
+    <id> urn:uuid:903deee0-7bfa-11db-9fe1-0800200c9a66</id>
+    <entry>
+        <title> pip_python2.6 #1006 (FAILURE)</title>
+        <link type="text/html" href="http://ci.cloudsilverlining.org/view/pip/job/pip_python2.6/1006/" rel="alternate"/>
+        <id> tag:hudson.dev.java.net,2012:pip_python2.6:2012-01-05_10-41-45</id>
+        <published> 2012-01-05T10:41:45Z</published>
+        <updated> 2012-01-05T10:41:45Z</updated>
+    </entry>
+    <entry>
+        <title> pip_python2.6 #1005 (SUCCESS)</title>
+        <link type="text/html" href="http://ci.cloudsilverlining.org/view/pip/job/pip_python2.6/1005/" rel="alternate"/>
+        <id> tag:hudson.dev.java.net,2012:pip_python2.6:2012-01-04_10-41-45</id>
+        <published> 2012-01-04T10:41:45Z</published>
+        <updated> 2012-01-04T10:41:45Z</updated>
+    </entry>
+    <entry>
+        <title> pip_python2.6 #1004 (SUCCESS)</title>
+        <link type="text/html" href="http://ci.cloudsilverlining.org/view/pip/job/pip_python2.6/1004/" rel="alternate"/>
+        <id> tag:hudson.dev.java.net,2012:pip_python2.6:2012-01-03_10-41-51</id>
+        <published> 2012-01-03T10:41:51Z</published>
+        <updated> 2012-01-03T10:41:51Z</updated>
+    </entry>
+    <entry>
+        <title> pip_python2.6 #1003 (SUCCESS)</title>
+        <link type="text/html" href="http://ci.cloudsilverlining.org/view/pip/job/pip_python2.6/1003/" rel="alternate"/>
+        <id> tag:hudson.dev.java.net,2011:pip_python2.6:2011-12-30_10-41-45</id>
+        <published> 2011-12-30T10:41:45Z</published>
+        <updated> 2011-12-30T10:41:45Z</updated>
+    </entry>
+    <entry>
+        <title> pip_python2.6 #1002 (SUCCESS)</title>
+        <link type="text/html" href="http://ci.cloudsilverlining.org/view/pip/job/pip_python2.6/1002/" rel="alternate"/>
+        <id> tag:hudson.dev.java.net,2011:pip_python2.6:2011-12-28_10-41-48</id>
+        <published> 2011-12-28T10:41:48Z</published>
+        <updated> 2011-12-28T10:41:48Z</updated>
+    </entry>
+</feed>
+

@@ -9,4 +9,6 @@ dropin.cache
 pip-log.txt
 .installed.cfg
 .coverage
+.ropeproject
 tags
+test/test-output

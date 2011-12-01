@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+
+<channel rdf:about="http://slashdot.org/">
+<title>Slashdot</title>
+<link>http://slashdot.org/</link>
+<description>News for nerds, stuff that matters</description>
+<dc:language>en-us</dc:language>
+<dc:rights>Copyright 1997-2012, Geeknet, Inc.  All Rights Reserved.</dc:rights>
+<dc:date>2012-01-14T00:32:12+00:00</dc:date>
+<dc:publisher>Geeknet, Inc.</dc:publisher>
+<dc:creator>help@slashdot.org</dc:creator>
+<dc:subject>Technology</dc:subject>
+<syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://science.slashdot.org/story/12/01/13/2244249/homeless-student-is-intel-talent-search-semifinalist?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://politics.slashdot.org/story/12/01/13/2222203/dns-provision-pulled-from-sopa?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://it.slashdot.org/story/12/01/13/2216218/sykipot-trojan-variant-stealing-dod-smartcard-credentials?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://science.slashdot.org/story/12/01/13/2140236/astronomers-release-enormous-database-of-variable-luminosity-celestial-objects?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://developers.slashdot.org/story/12/01/13/2114257/2011s-fastest-growing-language-objective-c?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://it.slashdot.org/story/12/01/13/1953230/microsoft-trustworthy-computing-turns-10?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://developers.slashdot.org/story/12/01/13/1948202/oracle-v-google-trial-on-indefinite-hold?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://ask.slashdot.org/story/12/01/13/1918250/ask-slashdot-advancing-a-programming-career?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://science.slashdot.org/story/12/01/13/1821242/totally-drug-resistant-tb-emerges-in-india?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://mobile.slashdot.org/story/12/01/13/1745219/carmakers-prepare-for-augmented-reality-driving?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://it.slashdot.org/story/12/01/13/1715203/passwords-not-going-away-any-time-soon?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://tech.slashdot.org/story/12/01/13/1618241/tsa-makes-400k-annually-in-loose-change?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://yro.slashdot.org/story/12/01/13/1548214/us-government-seeks-extradition-of-uk-student-for-file-sharing?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://tech.slashdot.org/story/12/01/13/1455242/windows-admins-need-to-prepare-for-gui-less-server?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://tech.slashdot.org/story/12/01/13/130257/google-caught-misbehaving-by-kenyan-startup?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+ </rdf:Seq>
+</items>
+<image rdf:resource="http://a.fsdn.com/sd/topics/topicslashdot.gif" />
+<textinput rdf:resource="http://slashdot.org/search.pl" />
+<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rdf+xml" href="http://rss.slashdot.org/Slashdot/slashdot" /><feedburner:info uri="slashdot/slashdot" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /></channel>
+<image rdf:about="http://a.fsdn.com/sd/topics/topicslashdot.gif">
+<title>Slashdot</title>
+<url>http://a.fsdn.com/sd/topics/topicslashdot.gif</url>
+<link>http://slashdot.org/</link>
+</image>
+<item rdf:about="http://science.slashdot.org/story/12/01/13/2244249/homeless-student-is-intel-talent-search-semifinalist?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Homeless Student Is Intel Talent Search Semifinalist</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/Kput7j7j8UU/homeless-student-is-intel-talent-search-semifinalist</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/oECE2iAllqxbo1vUomWEIc77uss/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/oECE2iAllqxbo1vUomWEIc77uss/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/oECE2iAllqxbo1vUomWEIc77uss/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/oECE2iAllqxbo1vUomWEIc77uss/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;An anonymous reader writes "Samantha Garvey, a senior at Brentwood High School, has managed to become one of the remaining 300 semifinalists in the Intel Science Talent Search this year. Her research focused on mussels and on her discovery that they change the thickness of their shells if a predator such as crabs are introduced. Why is Garvey's achievement so impressive? Because she and her entire family are homeless, and rely on a local homeless shelter. Such a situation would stop many students from being able to focus on studying, let alone a research project, but Garvey has instead used her situation as motivation."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Homeless+Student+Is+Intel+Talent+Search+Semifinalist%3A+http%3A%2F%2Fbit.ly%2FyuKDhx"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F12%2F01%2F13%2F2244249%2Fhomeless-student-is-intel-talent-search-semifinalist%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/12/01/13/2244249/homeless-student-is-intel-talent-search-semifinalist?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620558&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/Kput7j7j8UU" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T23:39:00+00:00</dc:date>
+<dc:subject>education</dc:subject>
+<slash:department>dedication-to-science</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>46</slash:comments>
+<slash:hit_parade>46,44,33,28,6,4,3</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/12/01/13/2244249/homeless-student-is-intel-talent-search-semifinalist?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://politics.slashdot.org/story/12/01/13/2222203/dns-provision-pulled-from-sopa?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>DNS Provision Pulled From SOPA</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/ke1gsFc8z8o/dns-provision-pulled-from-sopa</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/GSIjQ3p0EWehVUT4fJSPWyVvq-M/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/GSIjQ3p0EWehVUT4fJSPWyVvq-M/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/GSIjQ3p0EWehVUT4fJSPWyVvq-M/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/GSIjQ3p0EWehVUT4fJSPWyVvq-M/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;New submitter crvtec sends this excerpt from CNet:
+"Chairman Lamar Smith (R-Texas), one of the biggest backers of the Stop Online Piracy Act, today said he plans to remove the Domain Name System blocking provision. 'After consultation with industry groups across the country,' Smith said in a statement released by his office, 'I feel we should remove (DNS) blocking from the Stop Online Piracy Act so that the [U.S. House Judiciary] Committee can further examine the issues surrounding this provision.'"&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=DNS+Provision+Pulled+From+SOPA%3A+http%3A%2F%2Fbit.ly%2FzipX40"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fpolitics.slashdot.org%2Fstory%2F12%2F01%2F13%2F2222203%2Fdns-provision-pulled-from-sopa%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://politics.slashdot.org/story/12/01/13/2222203/dns-provision-pulled-from-sopa?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620530&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/ke1gsFc8z8o" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T22:58:00+00:00</dc:date>
+<dc:subject>government</dc:subject>
+<slash:department>time-to-double-down,-protesters</slash:department>
+<slash:section>politics</slash:section>
+<slash:comments>78</slash:comments>
+<slash:hit_parade>78,78,55,49,22,14,8</slash:hit_parade>
+<feedburner:origLink>http://politics.slashdot.org/story/12/01/13/2222203/dns-provision-pulled-from-sopa?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://it.slashdot.org/story/12/01/13/2216218/sykipot-trojan-variant-stealing-dod-smartcard-credentials?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Sykipot Trojan Variant Stealing DoD Smartcard Credentials</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/dl8EZfOkr2Q/sykipot-trojan-variant-stealing-dod-smartcard-credentials</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/YYz32yiLjBH52qVR1bm7UWZeZFM/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/YYz32yiLjBH52qVR1bm7UWZeZFM/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/YYz32yiLjBH52qVR1bm7UWZeZFM/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/YYz32yiLjBH52qVR1bm7UWZeZFM/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;Trailrunner7 writes "A new research report says variants of the Sykipot Trojan have been found that can steal Dept. of Defense smartcard credentials. The research, published in a blog post Thursday, is the latest by Alien Vault to look at Sykipot, a Trojan horse program known to be used in targeted attacks against the defense industry. The new variants, which Alien Vault believes have been circulating since March, 2011, have been used in 'dozens of attacks' and contain features that would allow remote attackers to steal smart card credentials and access sensitive information."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Sykipot+Trojan+Variant+Stealing+DoD+Smartcard+Credentials%3A+http%3A%2F%2Fbit.ly%2FxLIJZ8"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fit.slashdot.org%2Fstory%2F12%2F01%2F13%2F2216218%2Fsykipot-trojan-variant-stealing-dod-smartcard-credentials%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://it.slashdot.org/story/12/01/13/2216218/sykipot-trojan-variant-stealing-dod-smartcard-credentials?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620528&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/dl8EZfOkr2Q" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T22:16:00+00:00</dc:date>
+<dc:subject>security</dc:subject>
+<slash:department>tax-money-well-spent</slash:department>
+<slash:section>it</slash:section>
+<slash:comments>20</slash:comments>
+<slash:hit_parade>20,18,10,8,6,2,0</slash:hit_parade>
+<feedburner:origLink>http://it.slashdot.org/story/12/01/13/2216218/sykipot-trojan-variant-stealing-dod-smartcard-credentials?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://science.slashdot.org/story/12/01/13/2140236/astronomers-release-enormous-database-of-variable-luminosity-celestial-objects?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Astronomers Release Enormous Database of Variable-Luminosity Celestial Objects</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/gFKJBcwA_Sc/astronomers-release-enormous-database-of-variable-luminosity-celestial-objects</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/vuGyFwAAcp4FMpIVRk5k1eiBfWI/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/vuGyFwAAcp4FMpIVRk5k1eiBfWI/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/vuGyFwAAcp4FMpIVRk5k1eiBfWI/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/vuGyFwAAcp4FMpIVRk5k1eiBfWI/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;wisebabo writes "According to a Caltech news release, 'Astronomers from the California Institute of Technology and the University of Arizona have released the largest data set ever collected that documents the brightening and dimming of stars and other celestial objects&amp;mdash;two hundred million in total. The night sky is filled with objects like asteroids that dash across the sky and others&amp;mdash;like exploding stars and variable stars-that flash, dim, and brighten. ... Using the Catalina Real-Time Transient Survey, a project led by Caltech, the astronomers systematically scanned the heavens for these dynamic objects, producing an unprecedented data set that will allow scientists worldwide to pursue new research.' So, anybody going to write a program looking for artificial sequences? (primes, Fibonacci, integers.) Wouldn't a good way to attract interstellar attention 'cheaply' would be to put up some (very) big solar sails in orbit around a star to modulate (and maybe collect!) its output? With 'micro-transits' being a preferred way to find exoplanets, somebody looking could stumble across this."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Astronomers+Release+Enormous+Database+of+Variable-Luminosity+Celestial+Objects%3A+http%3A%2F%2Fbit.ly%2FxHxbCl"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F12%2F01%2F13%2F2140236%2Fastronomers-release-enormous-database-of-variable-luminosity-celestial-objects%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/12/01/13/2140236/astronomers-release-enormous-database-of-variable-luminosity-celestial-objects?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620478&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/gFKJBcwA_Sc" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T21:53:00+00:00</dc:date>
+<dc:subject>science</dc:subject>
+<slash:department>go-big-or-go-home</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>27</slash:comments>
+<slash:hit_parade>27,26,18,12,4,0,0</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/12/01/13/2140236/astronomers-release-enormous-database-of-variable-luminosity-celestial-objects?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://developers.slashdot.org/story/12/01/13/2114257/2011s-fastest-growing-language-objective-c?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>2011's Fastest Growing Language: Objective-C</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/cqml7oJZRX8/2011s-fastest-growing-language-objective-c</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/IIC5XAInQGNB7DFQGVTSkDRyatQ/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/IIC5XAInQGNB7DFQGVTSkDRyatQ/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/IIC5XAInQGNB7DFQGVTSkDRyatQ/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/IIC5XAInQGNB7DFQGVTSkDRyatQ/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;mikejuk writes "Every January, it is traditional to compare the state of programming language usage as indicated by the TIOBE index. So what's up and what's down this year? The top language is still Java, but it's slowly falling in the percentages. Objective-C experienced the most growth, followed by C# and C. JavaScript climbed back into the top 10, displacing Ruby. Python and PHP experienced the biggest drops. If you like outside runners, then cheer for Lua and R, which have just entered the top 20. However, I have to wonder why Logo is in the top 20 as well. I know programming education is becoming important, but Logo?"&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=2011's+Fastest+Growing+Language%3A+Objective-C%3A+http%3A%2F%2Fbit.ly%2FwGC70Y"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdevelopers.slashdot.org%2Fstory%2F12%2F01%2F13%2F2114257%2F2011s-fastest-growing-language-objective-c%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://developers.slashdot.org/story/12/01/13/2114257/2011s-fastest-growing-language-objective-c?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620436&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/cqml7oJZRX8" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T21:32:00+00:00</dc:date>
+<dc:subject>programming</dc:subject>
+<slash:department>language-war-ammo</slash:department>
+<slash:section>developers</slash:section>
+<slash:comments>189</slash:comments>
+<slash:hit_parade>189,183,146,127,35,23,16</slash:hit_parade>
+<feedburner:origLink>http://developers.slashdot.org/story/12/01/13/2114257/2011s-fastest-growing-language-objective-c?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://it.slashdot.org/story/12/01/13/1953230/microsoft-trustworthy-computing-turns-10?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Microsoft 'Trustworthy Computing' Turns 10</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/MyyxuGbniFk/microsoft-trustworthy-computing-turns-10</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/3TCq7U9IN5VlRjEusVhRR10H8K0/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/3TCq7U9IN5VlRjEusVhRR10H8K0/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/3TCq7U9IN5VlRjEusVhRR10H8K0/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/3TCq7U9IN5VlRjEusVhRR10H8K0/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;gManZboy writes "Bill Gates fired off his famous Trustworthy Computing memo to Microsoft employees on Jan. 15, 2002, amid a series of high-profile attacks on Windows computers and browsers in the form of worms and viruses like Code Red and 'Anna Kournikova.' The onslaught forced Gates to declare a security emergency within Microsoft, and halt production while the company's 8,500 software engineers sifted through millions of lines of source code to identify and fix vulnerabilities. The hiatus cost Microsoft $100 million. Today, the stakes are much higher. 'TWC Next' will include a focus on cloud services such as Azure, the company says."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Microsoft+'Trustworthy+Computing'+Turns+10%3A+http%3A%2F%2Fbit.ly%2FzeJGNy"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fit.slashdot.org%2Fstory%2F12%2F01%2F13%2F1953230%2Fmicrosoft-trustworthy-computing-turns-10%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://it.slashdot.org/story/12/01/13/1953230/microsoft-trustworthy-computing-turns-10?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620328&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/MyyxuGbniFk" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T20:50:00+00:00</dc:date>
+<dc:subject>microsoft</dc:subject>
+<slash:department>eat-your-cake-at-your-desk</slash:department>
+<slash:section>it</slash:section>
+<slash:comments>112</slash:comments>
+<slash:hit_parade>112,103,72,53,19,9,5</slash:hit_parade>
+<feedburner:origLink>http://it.slashdot.org/story/12/01/13/1953230/microsoft-trustworthy-computing-turns-10?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://developers.slashdot.org/story/12/01/13/1948202/oracle-v-google-trial-on-indefinite-hold?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Oracle v. Google Trial On Indefinite Hold</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/P2b2uJ3RgGw/oracle-v-google-trial-on-indefinite-hold</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/rCgGhcnr7O8WR5X8LTaGygdFrN4/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/rCgGhcnr7O8WR5X8LTaGygdFrN4/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/rCgGhcnr7O8WR5X8LTaGygdFrN4/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/rCgGhcnr7O8WR5X8LTaGygdFrN4/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;symbolset writes "The trial in which Oracle is suing Google over Android has been put on indefinite hold by the trial judge, until Oracle comes up with a credible methodology for figuring alleged damages. The trial was planned to start on or after March 19."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Oracle+v.+Google+Trial+On+Indefinite+Hold%3A+http%3A%2F%2Fbit.ly%2FxGOOKn"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdevelopers.slashdot.org%2Fstory%2F12%2F01%2F13%2F1948202%2Foracle-v-google-trial-on-indefinite-hold%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://developers.slashdot.org/story/12/01/13/1948202/oracle-v-google-trial-on-indefinite-hold?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620312&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/P2b2uJ3RgGw" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T20:07:00+00:00</dc:date>
+<dc:subject>android</dc:subject>
+<slash:department>hurry-up-and-wait</slash:department>
+<slash:section>developers</slash:section>
+<slash:comments>53</slash:comments>
+<slash:hit_parade>53,52,42,32,15,6,2</slash:hit_parade>
+<feedburner:origLink>http://developers.slashdot.org/story/12/01/13/1948202/oracle-v-google-trial-on-indefinite-hold?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://ask.slashdot.org/story/12/01/13/1918250/ask-slashdot-advancing-a-programming-career?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Ask Slashdot: Advancing a Programming Career?</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/r9tUsq69p2Y/ask-slashdot-advancing-a-programming-career</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/Lj22vqLlul2CeeLqhTSb6hyysts/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/Lj22vqLlul2CeeLqhTSb6hyysts/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/Lj22vqLlul2CeeLqhTSb6hyysts/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/Lj22vqLlul2CeeLqhTSb6hyysts/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;AuMatar writes "I've been a professional programmer for 10 years. The startup I work for was recently bought, and while I was offered a full-time job, I opted to accept only a six-month contract. At my most recent job, I was lead developer for a platform that shipped tens of millions of units, leading a team that spanned up to three geographical areas I've done everything from maintenance to brand new apps. About the only thing I haven't done is been lead architect on a large system. What else is there to look for in the next job so it won't just feel like the same challenges all over again? I'm not interested in starting my own company, so I'm looking for suggestions assuming I'll be working for someone else."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Ask+Slashdot%3A+Advancing+a+Programming+Career%3F%3A+http%3A%2F%2Fbit.ly%2FzPfdjl"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fask.slashdot.org%2Fstory%2F12%2F01%2F13%2F1918250%2Fask-slashdot-advancing-a-programming-career%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://ask.slashdot.org/story/12/01/13/1918250/ask-slashdot-advancing-a-programming-career?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620286&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/r9tUsq69p2Y" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T19:25:00+00:00</dc:date>
+<dc:subject>programming</dc:subject>
+<slash:department>new-day-new-challenge</slash:department>
+<slash:section>askslashdot</slash:section>
+<slash:comments>131</slash:comments>
+<slash:hit_parade>131,127,93,81,31,21,14</slash:hit_parade>
+<feedburner:origLink>http://ask.slashdot.org/story/12/01/13/1918250/ask-slashdot-advancing-a-programming-career?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://science.slashdot.org/story/12/01/13/1821242/totally-drug-resistant-tb-emerges-in-india?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Totally Drug-Resistant TB Emerges In India</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/d6FJsGCSdHA/totally-drug-resistant-tb-emerges-in-india</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/ZKWxFYBuQurD3Xi6bKsNLDeN6BY/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/ZKWxFYBuQurD3Xi6bKsNLDeN6BY/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/ZKWxFYBuQurD3Xi6bKsNLDeN6BY/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/ZKWxFYBuQurD3Xi6bKsNLDeN6BY/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;ananyo writes "Physicians in India have identified a form of incurable tuberculosis there, raising further concerns over increasing drug resistance to the disease (abstract). Although reports call this latest form a 'new entity,' researchers suggest that it is instead another development in a long-standing problem. The discovery makes India the third country in which a completely drug-resistant form of the disease has emerged, following cases documented in Italy in 2007 and Iran in 2009."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Totally+Drug-Resistant+TB+Emerges+In+India%3A+http%3A%2F%2Fbit.ly%2FxZxCoP"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F12%2F01%2F13%2F1821242%2Ftotally-drug-resistant-tb-emerges-in-india%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/12/01/13/1821242/totally-drug-resistant-tb-emerges-in-india?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620206&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/d6FJsGCSdHA" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T18:44:00+00:00</dc:date>
+<dc:subject>medicine</dc:subject>
+<slash:department>it's-all-darwin's-fault</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>268</slash:comments>
+<slash:hit_parade>268,264,206,180,59,32,25</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/12/01/13/1821242/totally-drug-resistant-tb-emerges-in-india?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://mobile.slashdot.org/story/12/01/13/1745219/carmakers-prepare-for-augmented-reality-driving?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Carmakers Prepare For Augmented Reality Driving</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/ZqWUF_iErc0/carmakers-prepare-for-augmented-reality-driving</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/34jwsgEEGdtg1iK-lzwGZz-liDQ/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/34jwsgEEGdtg1iK-lzwGZz-liDQ/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/34jwsgEEGdtg1iK-lzwGZz-liDQ/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/34jwsgEEGdtg1iK-lzwGZz-liDQ/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;An anonymous reader writes "Car manufacturers at CES are showing off their future integration of mobile computing technologies and automobiles. Quoting CNN: 'As digital tech &amp;mdash; and our expectations for it &amp;mdash; becomes more mobile, carmakers are taking notice. Many automotive designers here seem to have taken inspiration from smartphones, with their promise of being always connected and their vast menu of apps for every purpose. ... Simply point your hand at them, and the icons open to show real-time information: when that bridge over there was built, what band is playing at that nightclub on the left, whether that new caf&amp;#233; up the street has any tables available. Wave your hand again, and you've made a restaurant reservation. ... All these advancements may make driving more interesting. Or they may spoil one of modern society's last refuges from the hyper-connected digital world. Either way, they are coming soon.'"&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Carmakers+Prepare+For+Augmented+Reality+Driving%3A+http%3A%2F%2Fbit.ly%2FwYmmMX"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmobile.slashdot.org%2Fstory%2F12%2F01%2F13%2F1745219%2Fcarmakers-prepare-for-augmented-reality-driving%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://mobile.slashdot.org/story/12/01/13/1745219/carmakers-prepare-for-augmented-reality-driving?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620140&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/ZqWUF_iErc0" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T18:03:00+00:00</dc:date>
+<dc:subject>transportation</dc:subject>
+<slash:department>we-have-enough-trouble-driving-with-the-regular-reality</slash:department>
+<slash:section>mobile</slash:section>
+<slash:comments>160</slash:comments>
+<slash:hit_parade>160,159,125,103,34,15,7</slash:hit_parade>
+<feedburner:origLink>http://mobile.slashdot.org/story/12/01/13/1745219/carmakers-prepare-for-augmented-reality-driving?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://it.slashdot.org/story/12/01/13/1715203/passwords-not-going-away-any-time-soon?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Passwords Not Going Away Any Time Soon</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/uflL5Y9-nBw/passwords-not-going-away-any-time-soon</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/5pQZXR-f_BVilPEa6JADF7PRq2Q/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/5pQZXR-f_BVilPEa6JADF7PRq2Q/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/5pQZXR-f_BVilPEa6JADF7PRq2Q/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/5pQZXR-f_BVilPEa6JADF7PRq2Q/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;New submitter isoloisti writes "Hot on the heels of IBM's 'no more passwords' prediction, Wired has an article about provocative research saying that passwords are here to stay. Researchers from Microsoft and Carleton U. take a harsh view of research on authentication (PDF), saying, 'no progress has been made in the last twenty years.' They dismiss biometrics, PKI, OpenID, and single-signon: 'Not only have proposed alternatives failed, but we have learnt little from the failures.' Because the computer industry so thoroughly wrote off passwords about a decade ago, not enough serious research has gone into improving passwords and understanding how they get compromised in the real world. 'It is time to admit that passwords will be with us for some time, and moreover, that in many instances they are the best-fit among currently known solutions.'"&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Passwords+Not+Going+Away+Any+Time+Soon%3A+http%3A%2F%2Fbit.ly%2FAgT6ri"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fit.slashdot.org%2Fstory%2F12%2F01%2F13%2F1715203%2Fpasswords-not-going-away-any-time-soon%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://it.slashdot.org/story/12/01/13/1715203/passwords-not-going-away-any-time-soon?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620108&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/uflL5Y9-nBw" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T17:20:00+00:00</dc:date>
+<dc:subject>microsoft</dc:subject>
+<slash:department>12345-letmein</slash:department>
+<slash:section>it</slash:section>
+<slash:comments>183</slash:comments>
+<slash:hit_parade>183,180,129,112,44,28,15</slash:hit_parade>
+<feedburner:origLink>http://it.slashdot.org/story/12/01/13/1715203/passwords-not-going-away-any-time-soon?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://tech.slashdot.org/story/12/01/13/1618241/tsa-makes-400k-annually-in-loose-change?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>TSA Makes $400K Annually In Loose Change</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/0K6H5rcddjQ/tsa-makes-400k-annually-in-loose-change</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/5fbz6oST1s3190QuCvWxyw17D0E/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/5fbz6oST1s3190QuCvWxyw17D0E/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/5fbz6oST1s3190QuCvWxyw17D0E/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/5fbz6oST1s3190QuCvWxyw17D0E/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;Hugh Pickens writes "NBC reports that airport travelers left behind $409,085.56 in loose change at security checkpoints in 2010, providing an additional source of funding for the Transportation Security Administration. 'TSA puts (the leftover money) in a jar at the security checkpoint, at the end of each shift they take it, count it, put it in an envelope and send it to the finance office,' says TSA spokesperson Nico Melendez. 'It is amazing. All that change, it all adds up.' Melendez adds that the money goes into the general operating budget for TSA that is typically used for technology, light bulbs or just overall general expenses. Rep. Jeff Miller (R-Fla.) has introduced legislation that would direct the TSA to transfer unclaimed money recovered at airport security checkpoints to the United Service Organizations (USO), a private nonprofit that operates centers for the military at 41 U.S. airports. The recovered change is not to be confused with the theft that occurs when TSA agents augment their salary by helping themselves to the contents of passengers' luggage as it passes through security checkpoints. For example in 2009, a half dozen TSA agents at Miami International Airport were charged with grand theft after boosting an iPod, bottles of perfume, cameras, a GPS system, a Coach purse, and a Hewlett Packard Mini Notebook from passengers' luggage as travelers at just this one airport reported as many as 1,500 items stolen, the majority of which were never recovered."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=TSA+Makes+%24400K+Annually+In+Loose+Change%3A+http%3A%2F%2Fbit.ly%2FxjUsGQ"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftech.slashdot.org%2Fstory%2F12%2F01%2F13%2F1618241%2Ftsa-makes-400k-annually-in-loose-change%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://tech.slashdot.org/story/12/01/13/1618241/tsa-makes-400k-annually-in-loose-change?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2620044&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/0K6H5rcddjQ" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T16:37:00+00:00</dc:date>
+<dc:subject>crime</dc:subject>
+<slash:department>nickel-and-dime</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>255</slash:comments>
+<slash:hit_parade>255,252,191,157,47,29,19</slash:hit_parade>
+<feedburner:origLink>http://tech.slashdot.org/story/12/01/13/1618241/tsa-makes-400k-annually-in-loose-change?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://yro.slashdot.org/story/12/01/13/1548214/us-government-seeks-extradition-of-uk-student-for-file-sharing?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>US Government Seeks Extradition of UK Student For File-Sharing</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/wG3fG2Zthp0/us-government-seeks-extradition-of-uk-student-for-file-sharing</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/Lto7xdTC0CngyTCZi-Sfa3SdlPY/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/Lto7xdTC0CngyTCZi-Sfa3SdlPY/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/Lto7xdTC0CngyTCZi-Sfa3SdlPY/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/Lto7xdTC0CngyTCZi-Sfa3SdlPY/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;Gimble writes "The BBC reports that UK student Richard O'Dwyer has lost a legal battle to block his extradition to the U.S., where he faces copyright infringement charges for running a file sharing site (ruling). O'Dwyer operated the site 'TV-Shack' from 2007 until 2010, which didn't offer any files itself, but posted links to streams and files hosted elsewhere. O'Dwyer was first arrested in June last year by British police acting on information from U.S. Immigration and Customs Enforcement. The domestic investigation was subsequently dropped, but Mr. O'Dwyer was re-arrested in May on an extradition warrant to face charges in America."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=US+Government+Seeks+Extradition+of+UK+Student+For+File-Sharing%3A+http%3A%2F%2Fbit.ly%2FxhLGgA"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fyro.slashdot.org%2Fstory%2F12%2F01%2F13%2F1548214%2Fus-government-seeks-extradition-of-uk-student-for-file-sharing%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://yro.slashdot.org/story/12/01/13/1548214/us-government-seeks-extradition-of-uk-student-for-file-sharing?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2619980&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/wG3fG2Zthp0" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T15:56:00+00:00</dc:date>
+<dc:subject>piracy</dc:subject>
+<slash:department>if-you-can't-stand-the-heat-don't-link-to-the-kitchen</slash:department>
+<slash:section>yro</slash:section>
+<slash:comments>359</slash:comments>
+<slash:hit_parade>359,355,284,231,83,55,34</slash:hit_parade>
+<feedburner:origLink>http://yro.slashdot.org/story/12/01/13/1548214/us-government-seeks-extradition-of-uk-student-for-file-sharing?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://tech.slashdot.org/story/12/01/13/1455242/windows-admins-need-to-prepare-for-gui-less-server?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Windows Admins Need To Prepare For GUI-Less Server</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/qjETVlc0CF8/windows-admins-need-to-prepare-for-gui-less-server</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/e8rOqCCQ-_bqsaD3EhVUJcLktTI/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/e8rOqCCQ-_bqsaD3EhVUJcLktTI/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/e8rOqCCQ-_bqsaD3EhVUJcLktTI/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/e8rOqCCQ-_bqsaD3EhVUJcLktTI/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;msmoriarty writes "We knew Windows Server 8 was going to be a departure for Microsoft, including an 'optional' GUI, but in a blog post made earlier this week, the Windows Server team said that working without the GUI will be the 'recommended' method, and is telling developers not to assume a GUI will be present. According to Windows consultant and author Don Jones, this is a big hint to Windows admins that they better get used to not having a GUI in future releases. From the article: 'I'm well aware that many Windows admins out there aren't looking forward to a GUI-less server operating system from Microsoft. ... I'm sure Microsoft has, too.They're proceeding anyway. We have two choices: adapt or die.'"&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Windows+Admins+Need+To+Prepare+For+GUI-Less+Server%3A+http%3A%2F%2Fbit.ly%2FwM064N"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftech.slashdot.org%2Fstory%2F12%2F01%2F13%2F1455242%2Fwindows-admins-need-to-prepare-for-gui-less-server%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://tech.slashdot.org/story/12/01/13/1455242/windows-admins-need-to-prepare-for-gui-less-server?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2619926&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/qjETVlc0CF8" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T15:13:00+00:00</dc:date>
+<dc:subject>gui</dc:subject>
+<slash:department>back-to-basics</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>636</slash:comments>
+<slash:hit_parade>636,629,477,402,103,50,36</slash:hit_parade>
+<feedburner:origLink>http://tech.slashdot.org/story/12/01/13/1455242/windows-admins-need-to-prepare-for-gui-less-server?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://tech.slashdot.org/story/12/01/13/130257/google-caught-misbehaving-by-kenyan-startup?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Google Caught Misbehaving By Kenyan Startup</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/D2RuzF6M4qI/google-caught-misbehaving-by-kenyan-startup</link>
+<description>&lt;p&gt;&lt;a href="http://feedads.g.doubleclick.net/~at/XvQINQ-zvWWtrQzP_EHCOJIwrkY/0/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/XvQINQ-zvWWtrQzP_EHCOJIwrkY/0/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;
+&lt;a href="http://feedads.g.doubleclick.net/~at/XvQINQ-zvWWtrQzP_EHCOJIwrkY/1/da"&gt;&lt;img src="http://feedads.g.doubleclick.net/~at/XvQINQ-zvWWtrQzP_EHCOJIwrkY/1/di" border="0" ismap="true"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;An anonymous reader sends in an interesting story from Mocality, a company that painstakingly built a business directory in Kenya. When they discovered that somebody was systematically harvesting the contact information they'd collected (and after a few very odd phone calls from confused Kenyan business owners), they set up a sting to see what was really going on. They swapped out the phone numbers listed for a few businesses with phone numbers in their own call centers, and then waited to see who called. Mocality was shocked to discover it was Google Kenya, who falsely claimed a business collaboration with Mocality, and then lied about Mocality's business practices.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a href="http://twitter.com/home?status=Google+Caught+Misbehaving+By+Kenyan+Startup%3A+http%3A%2F%2Fbit.ly%2FAi44K2"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftech.slashdot.org%2Fstory%2F12%2F01%2F13%2F130257%2Fgoogle-caught-misbehaving-by-kenyan-startup%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+&lt;a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;amp;url=http://slashdot.org"&gt;&lt;img src="//a.fsdn.com/sd/googleplus_icon_large.png"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://tech.slashdot.org/story/12/01/13/130257/google-caught-misbehaving-by-kenyan-startup?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=2619766&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/D2RuzF6M4qI" height="1" width="1"/&gt;</description>
+<dc:creator>Soulskill</dc:creator>
+<dc:date>2012-01-13T14:30:00+00:00</dc:date>
+<dc:subject>google</dc:subject>
+<slash:department>hand-in-cookie-jar</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>325</slash:comments>
+<slash:hit_parade>325,312,234,180,59,41,32</slash:hit_parade>
+<feedburner:origLink>http://tech.slashdot.org/story/12/01/13/130257/google-caught-misbehaving-by-kenyan-startup?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<textinput rdf:about="http://slashdot.org/search.pl">
+<title>Search Slashdot</title>
+<description>Search Slashdot stories</description>
+<name>query</name>
+<link>http://slashdot.org/search.pl</link>
+</textinput>
+</rdf:RDF>
