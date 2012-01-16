@@ -50,7 +50,7 @@ def parseopt(args=None):
         o('-p', '--pubdate',    action='store_true',  help='show publication date', ) ,
         o('-a', '--author',     action='store_true',  help='show author',           ) ,
         o('-c', '--comments',   action='store_true',  help='show comments',         ) ,
-        o('-g', '--no-heading', action='store',       help='do not show headings',  ) ,
+        o('-g', '--no-heading', action='store_true',  help='do not show headings',  ) ,
         o('-m', '--time-format',action='store',       help='date/time format',      ) ,
         o('-f', '--format',     action='store',       help='output format (overrides other format options)', ) ,
     )
