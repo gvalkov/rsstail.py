@@ -70,7 +70,7 @@ def parseopt(args=None):
         %%(placeholder)[flags]s
 
     Examples:
-        --format '%%(timestamp) %%(pubdate)-30s %%(author)s\\n'
+        --format '%%(timestamp)s %%(pubdate)-30s %%(author)s\\n'
         --format '%%(title)s was written by %%(author)s on %%(pubdate)s\\n'
 
     Time format takes standard 'sprftime' specifiers:
