@@ -9,6 +9,7 @@ import feedparser
 
 from sys import stdout, stderr
 from time import strptime, sleep
+from datetime import datetime as dt
 
 from rsstail.formatter import placeholders
 from rsstail.formatter import Formatter
@@ -149,7 +150,7 @@ def error(msg, flunk=False):
 
 
 def sigint_handler(num=None, frame=None):
-    print >>stderr, '...quitting'
+    stderr.write('...quitting\n')
     sys.exit(0)
 
 
@@ -169,6 +170,20 @@ def parse_date(dt_str):
         raise ValueError('date "%s" could not be parsed' % dt_str)
 
     return [i for i in res if i][0]
+
+
+def date_fmt(date):
+    if date:
+        d = dt(*date[:6]).strftime('%Y/%m/%d %H:%M:%S')
+        return d
+
+
+def get_last_mtime(entries):
+    try:
+        last = max(entries, key=lambda e: e.updated_parsed)
+        return last.updated_parsed
+    except ValueError:
+        return None
 
 
 def setup_formatter(o):
@@ -214,22 +229,30 @@ def tick(feeds, options, formatter, iteration):
     o = options
 
     for url, el in feeds.iteritems():
-        etag, last_modified = el
+        etag, last_mtime, last_update = el
 
-        log.debug('parsing %s ...' % url)
-        feed = feedparser.parse(url, etag=etag, modified=last_modified)
+        msg = 'parsing %s ...\n.etag:  %s\n.mtime: %s\n'
+        log.debug(msg % (url, etag, date_fmt(last_mtime)))
+
+        feed = feedparser.parse(url, etag=etag, modified=last_mtime)
 
         if feed.bozo == 1:
             msg = 'feed error \'%s\':\n%s' % (url, feed.bozo_exception)
             error(msg, o.nofail)
 
-        if o.initial and iteration == 1:
+        if iteration == 1 and o.initial:
             entries = feed.entries[:o.initial]
         else:
             entries = feed.entries
 
         if options.newer:
+            log.debug('showing entries older than %s' % date_fmt(last_update))
             p = lambda entry: entry.date_parsed > options.newer
+            entries = filter(p, entries)
+
+        if last_update:
+            log.debug('showing entries older than %s' % date_fmt(last_update))
+            p = lambda entry: entry.updated_parsed > last_update
             entries = filter(p, entries)
 
         if o.reverse:
@@ -239,13 +262,16 @@ def tick(feeds, options, formatter, iteration):
             out = formatter(entry)
             stdout.write(out)
             stdout.flush()
-            stdout.write(os.linesep)
 
-        # update modified and etag values
+        # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
-        last_modified = getattr(feed.feed, 'modified_parsed', None)
+        last_mtime = getattr(feed.feed, 'modified_parsed', None)
 
-        feeds[url] = (etag, last_modified)
+        new_last_update = get_last_mtime(entries)
+        if not new_last_update and not entries:
+            new_last_update = last_update
+
+        feeds[url] = (etag, last_mtime, new_last_update)
 
 
 def main():
@@ -276,8 +302,10 @@ def main():
 
     formatter = setup_formatter(o)
 
-    # { url1 : (None, None) ... }
-    feeds = dict.fromkeys(args, (None, None))
+    # { url1 : (None,  # etag
+    #           None,  # last modified (time tuple)
+    #           None)} # last update time (time tuple)
+    feeds = dict.fromkeys(args, (None, None, None))
 
     # global iteration count
     iteration = 1
