@@ -210,7 +210,7 @@ def sigint_handler(num=None, frame=None):
     sys.exit(0)
 
 
-def tick(feeds, options, formatter):
+def tick(feeds, options, formatter, iteration):
     o = options
 
     for url, el in feeds.iteritems():
@@ -223,7 +223,7 @@ def tick(feeds, options, formatter):
             msg = 'feed error \'%s\':\n%s' % (url, feed.bozo_exception)
             error(msg, o.nofail)
 
-        if o.initial:
+        if o.initial and iteration == 1:
             entries = feed.entries[:o.initial]
         else:
             entries = feed.entries
@@ -284,7 +284,7 @@ def main():
 
     while True:
         try:
-            tick(feeds, o, formatter)
+            tick(feeds, o, formatter, iteration)
 
             if o.iterations and iteration >= o.iterations:
                 log.debug('maximum number of iterations (%d) reached' % o.iterations)
