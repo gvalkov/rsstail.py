@@ -11,4 +11,4 @@ pip-log.txt
 .coverage
 .ropeproject
 tags
-test/test-output
+tests/test-output

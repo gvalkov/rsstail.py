@@ -262,6 +262,7 @@ def tick(feeds, options, formatter, iteration):
             out = formatter(entry)
             stdout.write(out)
             stdout.flush()
+            stdout.write(os.linesep)
 
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
