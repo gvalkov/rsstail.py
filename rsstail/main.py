@@ -148,6 +148,11 @@ def error(msg, flunk=False):
     if not flunk: sys.exit(1)
 
 
+def sigint_handler(num=None, frame=None):
+    print >>stderr, '...quitting'
+    sys.exit(0)
+
+
 def parse_date(dt_str):
     formats = ( '%Y/%m/%d %H:%M:%S',
                 '%Y/%m/%d %H:%M',
@@ -203,11 +208,6 @@ def setup_formatter(o):
     log.debug('using format %s' % repr(formatter.fmt))
     log.debug('using time format %s' % repr(formatter.time_fmt))
     return formatter
-
-
-def sigint_handler(num=None, frame=None):
-    print >>stderr, '...quitting'
-    sys.exit(0)
 
 
 def tick(feeds, options, formatter, iteration):
