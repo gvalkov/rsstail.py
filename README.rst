@@ -104,7 +104,7 @@ Colorizing output
 
 Since the output of rsstail can be easily piped to another process for
 processing, the preferred way of adding color is to use an utility like
-clide_ or multitail_ (other potential tools are ccze_ and colorize_).
+clide_ or multitail_ (other potential tools are ccze_, colorize_ and colorex_).
 
 Example clide_ settings::
 
@@ -169,6 +169,7 @@ Rsstail is released under the terms of the `New BSD License`_.
 .. _ccze:       http://bonehunter.rulez.org/CCZE.html
 .. _clide:      http://suso.suso.org/xulu/Clide
 .. _colorize:   http://colorize.raszi.hu/
+.. _colorex:    http://pypi.python.org/pypi/colorex/
 .. _multitail:  http://www.vanheusden.com/multitail/
 .. _feedparser: http://code.google.com/p/feedparser/
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
