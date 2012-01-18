@@ -38,7 +38,7 @@ Usage
     -p --pubdate            show publication date
     -a --author             show author
     -c --comments           show comments
-    -g --no-heading <arg>   do not show headings
+    -g --no-heading         do not show headings
     -m --time-format <arg>  date/time format
     -f --format <arg>       output format (overrides other format options)
 
@@ -46,7 +46,7 @@ Usage
     rsstail --timestamp --pubdate --title --author <url1> <url2> <url3>
     rsstail --reverse --title <url> <username:password@url>
     rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
-    rsstail --newer "2011/12/20 23:50:12" <url>
+    rsstail --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
 
 
 ::
