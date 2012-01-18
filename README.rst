@@ -148,6 +148,14 @@ No surprises here - the C rsstail_ is more memory/cpu efficient than this one.
 Use rsstail_ if memory/cpu efficiency is of concert to you.
 
 
+Shell completion
+----------------
+
+Rsstail comes with shell completion for bash and zsh.
+    - **bash:** copy rsstail.sh_ to ``/etc/bash_completion.d/``
+    - **zsh:**  copy rsstail.zsh_ anywhere in ``$fpath``
+
+
 Similar projects
 ----------------
 
@@ -155,6 +163,7 @@ Similar projects
     - feedstail_
     - theyoke_
     - wag_
+
 
 License
 -------
@@ -174,3 +183,6 @@ Rsstail is released under the terms of the `New BSD License`_.
 .. _feedparser: http://code.google.com/p/feedparser/
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
 .. _`New BSD License`: http://raw.github.com/gvalkov/rsstail.py/master/LICENSE
+
+.. _rsstail.sh:  http://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
+.. _rsstail.zsh: http://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.zsh
