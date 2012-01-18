@@ -278,7 +278,7 @@ def tick(feeds, options, formatter, iteration):
 def main():
     p, o, args = parseopt()
 
-    if o.help or len(sys.argv) == 1 or len(args) == 0:
+    if o.help or len(sys.argv) == 1:
         p.print_help() ; sys.exit(0)
 
     if o.help_format:
@@ -288,6 +288,9 @@ def main():
         from rsstail.version import version_verbose
         stdout.write(version_verbose())
         sys.exit(0)
+
+    if len(args) == 0:
+        p.print_help() ; sys.exit(0)
 
     if o.verbose:
         log.setLevel(logging.DEBUG)
