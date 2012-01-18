@@ -152,6 +152,7 @@ Shell completion
 ----------------
 
 Rsstail comes with shell completion for bash and zsh.
+
     - **bash:** copy rsstail.sh_ to ``/etc/bash_completion.d/``
     - **zsh:**  copy rsstail.zsh_ anywhere in ``$fpath``
 
@@ -184,5 +185,5 @@ Rsstail is released under the terms of the `New BSD License`_.
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
 .. _`New BSD License`: http://raw.github.com/gvalkov/rsstail.py/master/LICENSE
 
-.. _rsstail.sh:  http://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
-.. _rsstail.zsh: http://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.zsh
+.. _rsstail.sh:  https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
+.. _rsstail.zsh: https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.zsh
