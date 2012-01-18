@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-import os, sys
+import os, sys, copy
 import signal
 import logging
 import textwrap
 import feedparser
+import optparse as opt
 
 from sys import stdout, stderr
 from time import strptime, sleep
@@ -21,9 +22,7 @@ log = logging.getLogger('')
 
 
 def parseopt(args=None):
-    import optparse as opt
-
-    o = opt.make_option
+    o = RsstailOption
 
     gen_opts = (
         o('-v', '--verbose',    action='count',       help='increase verbosity'                ) ,
@@ -33,7 +32,7 @@ def parseopt(args=None):
     )
 
     feed_opts = (
-        o('-i', '--interval',   action='store',       help='poll every <arg> seconds',   type='int', default=300) ,
+        o('-i', '--interval',   action='store',       help='poll every <arg> seconds',   type='timespec', default='300') ,
         o('-e', '--iterations', action='store',       help='poll <arg> times and quit',  type='int', default=0) ,
         o('-n', '--initial',    action='store',       help='initially show <arg> items', type='int',     ) ,
         o('-w', '--newer',      action='store',       help='show items newer than <arg>',               ) ,
@@ -62,7 +61,7 @@ def parseopt(args=None):
       %(prog)s --timestamp --pubdate --title --author <url1> <url2> <url3>
       %(prog)s --reverse --title <url> <username:password@url>
       %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\\n' <url>
-      %(prog)s --newer "2011/12/20 23:50:12" <url>
+      %(prog)s --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
 
     ''' % {'prog' : os.path.basename(sys.argv[0])}
 
@@ -142,6 +141,33 @@ def parseopt(args=None):
     else:        o, a = p.parse_args(args)
 
     return p, o, a
+
+
+def check_timespec(option, o, value):
+    ''' option type='timespec' validator/parser
+        1 -> 1 ; 5m -> 300 ; 1h -> 3600 '''
+
+    try:
+        return int(value)
+    except ValueError:
+        multiply = {'s' : 1, 'm' : 60, 'h' : 3600}
+        suffix = value[-1]
+
+        msg = "option %s: invalid timespec value %r - hint: 60, 60s, 1m, 1h"
+        if suffix in multiply:
+            try:
+                v = int(value[:-1])
+                return v * multiply[suffix]
+            except ValueError:
+                raise opt.OptionValueError(msg % (option, value))
+
+        raise opt.OptionValueError(msg % (option, value))
+
+
+class RsstailOption(opt.Option):
+    TYPES = opt.Option.TYPES + ('timespec',)
+    TYPE_CHECKER = copy.copy(opt.Option.TYPE_CHECKER)
+    TYPE_CHECKER['timespec'] = check_timespec
 
 
 def error(msg, flunk=False):
