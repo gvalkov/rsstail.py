@@ -281,6 +281,10 @@ def tick(feeds, options, formatter, iteration):
             p = lambda entry: entry.updated_parsed > last_update
             entries = filter(p, entries)
 
+        new_last_update = get_last_mtime(entries)
+        if not new_last_update and not entries:
+            new_last_update = last_update
+
         if o.reverse:
             entries = reversed(entries)
 
@@ -293,10 +297,6 @@ def tick(feeds, options, formatter, iteration):
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
         last_mtime = getattr(feed.feed, 'modified_parsed', None)
-
-        new_last_update = get_last_mtime(entries)
-        if not new_last_update and not entries:
-            new_last_update = last_update
 
         feeds[url] = (etag, last_mtime, new_last_update)
 
