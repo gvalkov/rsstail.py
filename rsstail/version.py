@@ -33,7 +33,8 @@ def version_verbose():
     res = 'rsstail, version %s' % version()
     try:
         sha = _gitsha() ; brc = _gitbrc()
-        res = '%s  (%s:%s)' % (res, brc, sha[:8])
+        if sha or brc:
+            res = '%s  (%s:%s)' % (res, brc, sha[:8])
     except:
         pass
 
