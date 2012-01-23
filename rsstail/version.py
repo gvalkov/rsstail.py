@@ -6,7 +6,7 @@ Version information constants and auxiliary functions.
 '''
 
 
-VERSION = (0, 1, 1)
+VERSION = (0, 1, 2)
 
 
 import os
