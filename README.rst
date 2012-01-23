@@ -95,7 +95,7 @@ Alternatively, you can install it manually like any other python package::
 
     $ git clone git@github.com:gvalkov/rsstail.py.git
     $ cd rsstail.py
-    $ git co $versiontag
+    $ git reset --hard HEAD $versiontag
     $ python setup.py install
 
 
