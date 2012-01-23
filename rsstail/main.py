@@ -153,7 +153,7 @@ def check_timespec(option, o, value):
         multiply = {'s' : 1, 'm' : 60, 'h' : 3600}
         suffix = value[-1]
 
-        msg = "option %s: invalid timespec value %r - hint: 60, 60s, 1m, 1h"
+        msg = "option %s: invalid timespec value %s - hint: 60, 60s, 1m, 1h"
         if suffix in multiply:
             try:
                 v = int(value[:-1])
