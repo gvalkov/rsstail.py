@@ -26,7 +26,7 @@ def parseopt(args=None):
 
     gen_opts = (
         o('-v', '--verbose',    action='count',       help='increase verbosity'                ) ,
-        o('-V', '--version',    action='store_true',  help='print version and exit'            ) ,
+        o('-V', '--version',    action='store_true',  help='show version and exit'             ) ,
         o('-h', '--help',       action='store_true',  help='show this help message and exit'   ) ,
         o('-x', '--help-format',action='store_true',  help='show formatting help and exit'     ) ,
     )
@@ -34,10 +34,10 @@ def parseopt(args=None):
     feed_opts = (
         o('-i', '--interval',   action='store',       help='poll every <arg> seconds',   type='timespec', default='300') ,
         o('-e', '--iterations', action='store',       help='poll <arg> times and quit',  type='int', default=0) ,
-        o('-n', '--initial',    action='store',       help='initially show <arg> items', type='int',     ) ,
+        o('-n', '--initial',    action='store',       help='initially show <arg> items', type='int',    ) ,
         o('-w', '--newer',      action='store',       help='show items newer than <arg>',               ) ,
         o('-b', '--bytes',      action='store',       help='show only <arg> description/comment bytes', type='int' ) ,
-        o('-r', '--reverse',    action='store_true',  help='print in reverse order',                    ) ,
+        o('-r', '--reverse',    action='store_true',  help='show in reverse order',                     ) ,
         o('-s', '--striphtml',  action='store_true',  help='strip html tags',                           ) ,
         o('-o', '--nofail',     action='store_true',  help='do not exit on error',                      ) ,
     )
