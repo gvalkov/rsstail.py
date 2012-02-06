@@ -217,25 +217,25 @@ def setup_formatter(o):
     wh = not o.no_heading
 
     if o.timestamp:
-        fmt.append('%(timestamp)s  ')
+        fmt.append('%(timestamp)s')
 
     if o.pubdate:
-        fmt.append('Pubdate: %(pubdate)s  ' if wh else '%(pubdate)s  ' )
+        fmt.append('Pubdate: %(pubdate)s' if wh else '%(pubdate)s' )
 
     if o.title:
         fmt.append('Title: %(title)-50s' if wh else '%(title)-50s' )
 
     if o.author:
-        fmt.append('Author: %(author)s  ' if wh else '%(author)s  ' )
+        fmt.append('Author: %(author)s' if wh else '%(author)s' )
 
     if o.url:
-        fmt.append('Link: %(link)s\n' if wh else '%(link)s\n' )
+        fmt.append('Link: %(link)s' if wh else '%(link)s' )
 
     if o.desc:
-        fmt.append('Description: %(desc)s\n' if wh else '%(desc)s\n' )
+        fmt.append('\nDescription: %(desc)s\n' if wh else '\n%(desc)s\n' )
 
     if o.comments:
-        fmt.append('Comments: %(comments)s\n' if wh else '%(comments)s\n' )
+        fmt.append('Comments: %(comments)s' if wh else '%(comments)s' )
 
     time_fmt = '%Y/%m/%d %H:%M:%S' if not o.time_format else o.time_format
 
@@ -243,8 +243,7 @@ def setup_formatter(o):
         # default formatter
         formatter = Formatter('Title: %(title)s', time_fmt, o.striphtml)
     else:
-        #if not fmt[-1].endswith('\n'): fmt.append('\n')
-        formatter = Formatter(''.join(fmt), time_fmt)
+        formatter = Formatter('  '.join(fmt), time_fmt)
 
     log.debug('using format %s' % repr(formatter.fmt))
     log.debug('using time format %s' % repr(formatter.time_fmt))
@@ -290,7 +289,7 @@ def tick(feeds, options, formatter, iteration):
 
         for entry in entries:
             out = formatter(entry)
-            stdout.write(out)
+            stdout.write(out.rstrip(' '))
             stdout.flush()
             stdout.write(os.linesep)
 
