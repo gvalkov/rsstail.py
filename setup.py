@@ -13,10 +13,16 @@ tests_require = ('attest', 'scripttest')
 classifiers = (
     'Environment :: Console',
     'Topic :: Utilities',
-    'Development Status :: 4 - Beta',
     'Operating System :: OS Independent',
     'Programming Language :: Python :: 2.5',
     'License :: OSI Approved :: BSD License',
+    #'Development Status :: 1 - Planning',
+    #'Development Status :: 2 - Pre-Alpha',
+    #'Development Status :: 3 - Alpha',
+    'Development Status :: 4 - Beta',
+    #'Development Status :: 5 - Production/Stable',
+    #'Development Status :: 6 - Mature',
+    #'Development Status :: 7 - Inactive',
 )
 
 kw = {
