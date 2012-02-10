@@ -4,6 +4,10 @@
 from datetime import datetime
 
 
+# Check if advanced string formatting (PEP 3101) is available
+hasformat = hasattr('', 'format')
+
+
 def safe_attrgetter(item, default=''):
     ''' operator.attrgetter with a default value '''
     def inner(obj):
@@ -32,6 +36,9 @@ placeholders = {
 class Formatter(object):
     ''' I interpolate a format string with feed parser entry values '''
 
+    PH_NEW = 0x1 # {:} placeholders
+    PH_OLD = 0x2 # %()s placeholders
+
     def __init__(self, fmt, time_fmt, striphtml=False):
         self.fmt = fmt
         self.time_fmt = time_fmt
@@ -40,6 +47,24 @@ class Formatter(object):
         if striphtml:
             from re import compile
             self.re_striphtml = compile(r'<[^>]*?>')
+
+        self.placeholder_style = self.plcstyle()
+
+    def plcstyle(self):
+        ''' check if we're dealing with {} or %()s placeholders '''
+
+        if not hasformat:
+            s = self.PH_OLD
+        else:
+            from re import findall
+
+            cn = len(findall(r'{[^}]*}', self.fmt)), self.PH_NEW
+            co = len(findall(r'%\([^\(]*\)[^ ]*s', self.fmt)), self.PH_OLD
+
+            # whichever style has more occurrences, wins
+            s = max((cn, co))[1]
+
+        return s
 
     def __call__(self, entry):
         return self.format(entry)
@@ -60,7 +85,10 @@ class Formatter(object):
         if self.striphtml:
             rendered['desc'] = self.re_striphtml.sub('', rendered['desc'])
 
-        return self.fmt % rendered
+        if self.placeholder_style == self.PH_NEW:
+            return self.fmt.format(rendered)
+        else:
+            return self.fmt % rendered
 
     def format_dt(self, dt):
         return dt.strftime(self.time_fmt)

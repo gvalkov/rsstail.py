@@ -13,7 +13,7 @@ from time import strptime, sleep
 from datetime import datetime as dt
 
 from rsstail.formatter import placeholders
-from rsstail.formatter import Formatter
+from rsstail.formatter import Formatter, hasformat
 
 
 logfmt = '%(message)s' #'%(levelname)-6s: %(message)s'
@@ -60,33 +60,69 @@ def parseopt(args=None):
     Examples:
       %(prog)s --timestamp --pubdate --title --author <url1> <url2> <url3>
       %(prog)s --reverse --title <url> <username:password@url>
-      %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\\n' <url>
       %(prog)s --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
+      %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\\n' <url>
+      %(prog)s --format '{timestamp:<30} {title} {author}\\n' <url>
 
     ''' % {'prog' : os.path.basename(sys.argv[0])}
 
-    format_help = '''\
-    Format specifiers have the following form:
-        %%(placeholder)[flags]s
+    if not hasformat:
+        epilog = epilog.splitlines()[:-3]
+        epilog.append(os.linesep)
+        epilog = os.linesep.join(epilog)
 
-    Examples:
-        --format '%%(timestamp)s %%(pubdate)-30s %%(author)s\\n'
-        --format '%%(title)s was written by %%(author)s on %%(pubdate)s\\n'
 
-    Time format takes standard 'sprftime' specifiers:
-        --time-format '%%Y/%%m/%%d %%H:%%M:%%S'
-        --time-format 'Day of the year: %%j Month: %%b'
+    placeholders_str = os.linesep.join(
+        sorted(
+            map(lambda x: 8*' ' + x, placeholders),
+            cmp=lambda x,y: len(x) - len(y))
+    )
 
-    Useful flags in this context are:
-        %%(placeholder)-10s -  left align placeholder and pad to 10 characters
-        %%(placeholder)10s  - right align placeholder and pad to 10 characters
+    # readability is better than de-duplication in this case, imho
+    if hasformat:
+        format_help = '''\
+        Format specifiers must take one the following forms:
+            %%(placeholder)[flags]s
+            {placeholder:flags}
 
-    Available placeholders: \n%s
-    ''' % os.linesep.join(
-            sorted(
-                map(lambda x: 8*' ' + x, placeholders),
-                cmp=lambda x,y: len(x) - len(y))
-            )
+        Examples:
+            --format '%%(timestamp)s %%(pubdate)-30s %%(author)s\\n'
+            --format '%%(title)s was written by %%(author)s on %%(pubdate)s\\n'
+            --format '{timestamp:<20} {pubdate:^30} {author:>30}\\n'
+
+        Time format takes standard 'sprftime' specifiers:
+            --time-format '%%Y/%%m/%%d %%H:%%M:%%S'
+            --time-format 'Day of the year: %%j Month: %%b'
+
+        Useful flags in this context are:
+            %%(placeholder)-10s - left align and pad
+            %%(placeholder)10s  - right align and pad
+            {placeholder:<10}  - left align and pad
+            {placeholder:>10}  - right align and pad
+            {placeholder:^10}  - center align and pad
+
+        Available placeholders: \n%s
+        ''' % placeholders_str
+    else:
+        format_help = '''\
+        Format specifiers have the following form:
+            %%(placeholder)[flags]s
+
+        Examples:
+            --format '%%(timestamp)s %%(pubdate)-30s %%(author)s\\n'
+            --format '%%(title)s was written by %%(author)s on %%(pubdate)s\\n'
+
+        Time format takes standard 'sprftime' specifiers:
+            --time-format '%%Y/%%m/%%d %%H:%%M:%%S'
+            --time-format 'Day of the year: %%j Month: %%b'
+
+        Useful flags in this context are:
+            %%(placeholder)-10s - left align and pad
+            %%(placeholder)10s  - right align and pad
+
+        Available placeholders: \n%s
+        ''' % placeholders_str
+
 
     description = None
 
