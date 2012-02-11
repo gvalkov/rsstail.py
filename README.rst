@@ -16,7 +16,7 @@ Usage
 
     General Options:
     -v --verbose            increase verbosity
-    -V --version            print version and exit
+    -V --version            show version and exit
     -h --help               show this help message and exit
     -x --help-format        show formatting help and exit
 
@@ -26,7 +26,7 @@ Usage
     -n --initial <arg>      initially show <arg> items
     -w --newer <arg>        show items newer than <arg>
     -b --bytes <arg>        show only <arg> description/comment bytes
-    -r --reverse            print in reverse order
+    -r --reverse            show in reverse order
     -s --striphtml          strip html tags
     -o --nofail             do not exit on error
 
@@ -45,42 +45,48 @@ Usage
     Examples:
     rsstail --timestamp --pubdate --title --author <url1> <url2> <url3>
     rsstail --reverse --title <url> <username:password@url>
-    rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
     rsstail --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
-
+    rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
+    rsstail --format '{timestamp:<30} {title} {author}\n' <url>
 
 ::
 
+
     $ rsstail --help-format
-    Format specifiers have the following form:
+    Format specifiers must take one the following forms:
         %(placeholder)[flags]s
+        {placeholder:flags}
 
     Examples:
         --format '%(timestamp)s %(pubdate)-30s %(author)s\n'
         --format '%(title)s was written by %(author)s on %(pubdate)s\n'
+        --format '{timestamp:<20} {pubdate:^30} {author:>30}\n'
 
     Time format takes standard 'sprftime' specifiers:
         --time-format '%Y/%m/%d %H:%M:%S'
         --time-format 'Day of the year: %j Month: %b'
 
     Useful flags in this context are:
-        %(placeholder)-10s -  left align placeholder and pad to 10 characters
-        %(placeholder)10s  - right align placeholder and pad to 10 characters
+        %(placeholder)-10s - left align and pad
+        %(placeholder)10s  - right align and pad
+        {placeholder:<10}  - left align and pad
+        {placeholder:>10}  - right align and pad
+        {placeholder:^10}  - center align and pad
 
     Available placeholders: 
-        id
-        link
-        desc
-        title
-        author
-        updated
-        pubdate
-        expired
-        created
-        comments
-        timestamp
-    
+    id
+    link
+    desc
+    title
+    author
+    updated
+    pubdate
+    expired
+    created
+    comments
+    timestamp
 
+**note:** ``{placeholder:flags}`` style placeholders are available only with Python>=2.7.
 
 Installing
 ----------
@@ -183,7 +189,7 @@ Rsstail is released under the terms of the `New BSD License`_.
 .. _multitail:  http://www.vanheusden.com/multitail/
 .. _feedparser: http://code.google.com/p/feedparser/
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
-.. _`New BSD License`: http://raw.github.com/gvalkov/rsstail.py/master/LICENSE
+.. _`New BSD License`: https://raw.github.com/gvalkov/rsstail.py/master/LICENSE
 
 .. _rsstail.sh:  https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
-.. _rsstail.zsh: https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.zsh
+.. _rsstail.zsh: https://raw.github.com/gvalkov/rsstail.py/master/etc/_rsstail
