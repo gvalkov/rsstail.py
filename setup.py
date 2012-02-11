@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+from os import getuid
 from setuptools import setup
 from rsstail.version import version
-from os.path import dirname, join as pjoin
+from os.path import dirname, isdir, join as pjoin
 
 here = dirname(__file__)
 
@@ -47,6 +48,8 @@ kw = {
         'console_scripts'  : ['rsstail = rsstail.main:main']
     },
 
+    'data_files'           : [],
+
     'install_requires'     : requires,
     'tests_require'        : tests_require,
     'test_loader'          : 'attest:auto_reporter.test_loader',
@@ -55,5 +58,15 @@ kw = {
     'zip_safe'             : True,
 }
 
+# try to install bash and zsh completions (emphasis on the *try*)
+if getuid() == 0:
+    if isdir('/etc/bash_completion.d'):
+        t = ('/etc/bash_completion.d/', ['etc/rsstail.sh'])
+        kw['data_files'].append(t)
+
+    # this is only valid for most debians
+    if isdir('/usr/share/zsh/functions/Completion/Unix/'):
+        t = ('/usr/share/zsh/functions/Completion/Unix/', ['etc/_rsstail'])
+        kw['data_files'].append(t)
 
 setup(**kw)
