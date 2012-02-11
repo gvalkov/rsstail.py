@@ -275,11 +275,15 @@ def setup_formatter(o):
 
     time_fmt = '%Y/%m/%d %H:%M:%S' if not o.time_format else o.time_format
 
-    if not fmt:
+    if o.format:
+        fmt = o.format
+    elif not fmt:
         # default formatter
-        formatter = Formatter('Title: %(title)s', time_fmt, o.striphtml)
+        fmt = 'Title: %(title)s'
     else:
-        formatter = Formatter('  '.join(fmt), time_fmt)
+        fmt = '  '.join(fmt)
+
+    formatter = Formatter(fmt, time_fmt, o.striphtml)
 
     log.debug('using format %s' % repr(formatter.fmt))
     log.debug('using time format %s' % repr(formatter.time_fmt))
