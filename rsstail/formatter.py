@@ -25,7 +25,7 @@ placeholders = {
     'link'       : safe_attrgetter('link'),
     'desc'       : safe_attrgetter('description'),
     'pubdate'    : safe_attrgetter('date_parsed'),
-    'updated'    : None,
+    'updated'    : safe_attrgetter('updated_parsed'),
     'created'    : None,
     'expired'    : None,
     'author'     : safe_attrgetter('author'),
@@ -40,7 +40,7 @@ class Formatter(object):
     PH_OLD = 0x2 # %()s placeholders
 
     def __init__(self, fmt, time_fmt, striphtml=False):
-        self.fmt = fmt
+        self.fmt = unicode(fmt)
         self.time_fmt = time_fmt
 
         self.striphtml = striphtml
@@ -78,17 +78,22 @@ class Formatter(object):
             if not cb: continue
             rendered[ph] = cb(entry)
 
-        if 'pubdate' in rendered:
-            dt = datetime(*rendered['pubdate'][:6])
-            rendered['pubdate'] = self.format_dt(dt)
+        for i in ('pubdate', 'updated'):
+            if i in rendered:
+                rendered[i] = self.format_tt(rendered[i])
 
         if self.striphtml:
             rendered['desc'] = self.re_striphtml.sub('', rendered['desc'])
 
         if self.placeholder_style == self.PH_NEW:
-            return self.fmt.format(rendered)
+            return self.fmt.format(**rendered)
         else:
             return self.fmt % rendered
 
     def format_dt(self, dt):
         return dt.strftime(self.time_fmt)
+
+    def format_tt(self, tt):
+        dt = datetime(*tt[:6])
+        return self.format_dt(dt)
+

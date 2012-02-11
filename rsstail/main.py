@@ -328,7 +328,7 @@ def tick(feeds, options, formatter, iteration):
             entries = reversed(entries)
 
         for entry in entries:
-            out = formatter(entry)
+            out = formatter(entry).encode('utf-8')
             stdout.write(out.rstrip(' '))
             stdout.flush()
             stdout.write(os.linesep)
