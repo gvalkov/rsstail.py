@@ -162,6 +162,9 @@ Rsstail comes with shell completion for bash and zsh.
     - **bash:** copy rsstail.sh_ to ``/etc/bash_completion.d/``
     - **zsh:**  copy rsstail.zsh_ anywhere in ``$fpath``
 
+If you are installing system-wide, rsstail will attempt to place these files in
+the right locations.
+
 
 Similar projects
 ----------------
