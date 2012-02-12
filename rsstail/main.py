@@ -351,7 +351,7 @@ def main():
 
     if o.version:
         from rsstail.version import version_verbose
-        stdout.write(version_verbose())
+        stdout.write(version_verbose()+'\n')
         sys.exit(0)
 
     if len(args) == 0:
