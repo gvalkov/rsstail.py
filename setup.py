@@ -2,14 +2,14 @@
 # encoding: utf-8
 
 from os import getuid
-from setuptools import setup
+from setuptools import setup, Command
 from rsstail.version import version
 from os.path import dirname, isdir, join as pjoin
 
 here = dirname(__file__)
 
 requires = ('feedparser>=4.1',)
-tests_require = ('attest', 'scripttest')
+tests_require = ('pytest', 'scripttest')
 
 classifiers = (
     'Environment :: Console',
@@ -52,11 +52,25 @@ kw = {
 
     'install_requires'     : requires,
     'tests_require'        : tests_require,
-    'test_loader'          : 'attest:auto_reporter.test_loader',
-    'test_suite'           : 'tests.all',
+    'cmdclass'             : {},
 
     'zip_safe'             : True,
 }
+
+
+# setup.py test -> py.test tests
+class PyTest(Command):
+    user_options = []
+    def initialize_options(self): pass
+    def finalize_options(self):   pass
+    def run(self):
+        from subprocess import call
+        errno = call(('py.test', 'tests'))
+        raise SystemExit(errno)
+
+kw['cmdclass']['test'] = PyTest
+setup(**kw)
+
 
 # try to install bash and zsh completions (emphasis on the *try*)
 if getuid() == 0:
@@ -68,5 +82,6 @@ if getuid() == 0:
     if isdir('/usr/share/zsh/functions/Completion/Unix/'):
         t = ('/usr/share/zsh/functions/Completion/Unix/', ['etc/_rsstail'])
         kw['data_files'].append(t)
+
 
 setup(**kw)

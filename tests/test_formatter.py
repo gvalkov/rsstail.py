@@ -1,14 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from attest import Tests
 from rsstail.formatter import Formatter
 
-formatter = Tests()
 
-
-@formatter.test
-def placeholder_style_detect():
+def test_placeholder_style_detect():
     f = Formatter('{asdf} {zxcv} {qwerty}', None)
     assert f.placeholder_style == f.PH_NEW
 
@@ -23,7 +19,3 @@ def placeholder_style_detect():
 
     f = Formatter('{asdf} {zxcv} %(qwerty)s %(azerty)s', None)
     assert f.placeholder_style == f.PH_OLD
-
-
-if __name__ == '__main__':
-    formatter.main()
