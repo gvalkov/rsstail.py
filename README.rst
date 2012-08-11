@@ -49,8 +49,8 @@ Usage
     rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
     rsstail --format '{timestamp:<30} {title} {author}\n' <url>
 
-::
 
+::
 
     $ rsstail --help-format
     Format specifiers must take one the following forms:
@@ -73,7 +73,7 @@ Usage
         {placeholder:>10}  - right align and pad
         {placeholder:^10}  - center align and pad
 
-    Available placeholders: 
+    Available placeholders:
     id
     link
     desc
@@ -92,12 +92,16 @@ Installing
 ----------
 
 The latest stable version of rsstail is available on pypi, while the
-development version can be installed from github::
+development version can be installed from github:
+
+.. code-block:: bash
 
     $ pip install rsstail  # latest stable version
     $ pip install git+git://github.com/gvalkov/rsstail.git # latest development version
 
-Alternatively, you can install it manually like any other python package:: 
+Alternatively, you can install it manually like any other python package:
+
+.. code-block:: bash
 
     $ git clone git@github.com:gvalkov/rsstail.py.git
     $ cd rsstail.py
@@ -112,12 +116,14 @@ Since the output of rsstail can be easily piped to another process for
 processing, the preferred way of adding color is to use an utility like
 clide_ or multitail_ (other potential tools are ccze_, colorize_ and colorex_).
 
-Example clide_ settings::
+Example clide_ settings:
+
+.. code-block:: bash
 
     $ rsstail ... \
     | clide -e '/(Title|Pubdate|Author|Link|Description):/g,fg=yellow,bold' \
             -e '/^.*FAILURE.*$/,fg=red,bold \
-    
+
 
 Example multitail_ settings::
 
@@ -125,7 +131,7 @@ Example multitail_ settings::
     colorscheme:rsstail.py:console syndication feed monitor
     cs_re:red,,bold:^.*FAILURE.*$
     cs_re:cyan:(:|/)
-    cs_re:yellow:^.......... ..:..:..  
+    cs_re:yellow:^.......... ..:..:..
     cs_re:green:(Title|Author|Link|Pubdate):
 
     $ multitail -cS "rsstail.py" -l "rsstail ..."
@@ -133,18 +139,22 @@ Example multitail_ settings::
 These two examples are barely touching the surface of what clide_ and
 multitail_ are capable of. Refer to the documentation of these excellent
 projects for more information.
-    
+
 
 Memory/Cpu
 ----------
 
-rsstail_ (C)::
+rsstail_ (C):
+
+.. code-block:: bash
 
     $ /usr/bin/time -v rsstail -u http://rss.slashdot.org/Slashdot/slashdot
     Percent of CPU this job got: 1%
     Maximum resident set size (kbytes): 2852
 
-rsstail (python)::
+rsstail (python):
+
+.. code-block:: bash
 
     $ /usr/bin/time -v rsstail http://rss.slashdot.org/Slashdot/slashdot
     Percent of CPU this job got: 16%
