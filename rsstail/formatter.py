@@ -2,6 +2,11 @@
 # encoding: utf-8
 
 from datetime import datetime
+from sys import version_info
+
+
+if version_info.major == 2: ustr = unicode
+else: ustr = str
 
 
 # Check if advanced string formatting (PEP 3101) is available
@@ -40,7 +45,7 @@ class Formatter(object):
     PH_OLD = 0x2 # %()s placeholders
 
     def __init__(self, fmt, time_fmt, striphtml=False):
-        self.fmt = unicode(fmt)
+        self.fmt = ustr(fmt)
         self.time_fmt = time_fmt
 
         self.striphtml = striphtml
@@ -74,7 +79,7 @@ class Formatter(object):
             'timestamp' : self.format_dt(datetime.now()),
         }
 
-        for ph, cb in placeholders.iteritems():
+        for ph, cb in placeholders.items():
             if not cb: continue
             rendered[ph] = cb(entry)
 
@@ -96,4 +101,3 @@ class Formatter(object):
     def format_tt(self, tt):
         dt = datetime(*tt[:6])
         return self.format_dt(dt)
-

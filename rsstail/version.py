@@ -45,4 +45,4 @@ __all__ = (VERSION, version, version_verbose)
 
 
 if __name__ == '__main__':
-    print version_verbose()
+    print(version_verbose())

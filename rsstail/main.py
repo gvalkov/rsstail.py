@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+from __future__ import print_function
+
 import os, sys, copy
 import signal
 import logging
@@ -75,7 +77,7 @@ def parseopt(args=None):
     placeholders_str = os.linesep.join(
         sorted(
             map(lambda x: 8*' ' + x, placeholders),
-            cmp=lambda x,y: len(x) - len(y))
+            key=lambda x: len(x[0]) - len(x[1]))
     )
 
     # readability is better than de-duplication in this case, imho
@@ -159,7 +161,7 @@ def parseopt(args=None):
     }
 
     p = opt.OptionParser(**kw)
-    p.print_help_format = lambda: stdout.write(textwrap.dedent(format_help))
+    p.print_help_format = lambda: print(textwrap.dedent(format_help))
 
     gen_group  = opt.OptionGroup(p, 'General Options')
     feed_group = opt.OptionGroup(p, 'Feed Options')
@@ -212,7 +214,7 @@ def error(msg, flunk=False):
 
 
 def sigint_handler(num=None, frame=None):
-    stderr.write('...quitting\n')
+    print('...quitting\n', file=stderr)
     sys.exit(0)
 
 
@@ -227,7 +229,7 @@ def parse_date(dt_str):
         except ValueError:
             return None
 
-    res = map(_try_parse, formats)
+    res = [_try_parse(i) for i in formats]
     if not any(res):
         raise ValueError('date "%s" could not be parsed' % dt_str)
 
@@ -293,7 +295,7 @@ def setup_formatter(o):
 def tick(feeds, options, formatter, iteration):
     o = options
 
-    for url, el in feeds.iteritems():
+    for url, el in feeds.items():
         etag, last_mtime, last_update = el
 
         msg = 'parsing %s ...\n.etag:  %s\n.mtime: %s\n'
@@ -313,12 +315,12 @@ def tick(feeds, options, formatter, iteration):
         if options.newer:
             log.debug('showing entries older than %s' % date_fmt(last_update))
             p = lambda entry: entry.date_parsed > options.newer
-            entries = filter(p, entries)
+            entries = list(filter(p, entries))
 
         if last_update:
             log.debug('showing entries older than %s' % date_fmt(last_update))
             p = lambda entry: entry.updated_parsed > last_update
-            entries = filter(p, entries)
+            entries = list(filter(p, entries))
 
         new_last_update = get_last_mtime(entries)
         if not new_last_update and not entries:
@@ -328,10 +330,8 @@ def tick(feeds, options, formatter, iteration):
             entries = reversed(entries)
 
         for entry in entries:
-            out = formatter(entry).encode('utf-8')
-            stdout.write(out.rstrip(' '))
-            stdout.flush()
-            stdout.write(os.linesep)
+            out = formatter(entry)
+            print(out.rstrip(' '))
 
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
@@ -363,7 +363,7 @@ def main():
     if o.newer:
         try: o.newer = parse_date(o.newer)
         except ValueError as e: error(e)
-        log.debug('showing entries newer than \'%s\'' % o.newer)
+        log.debug("showing entries newer than {}".format(o.newer))
     else:
         o.newer = None
 
