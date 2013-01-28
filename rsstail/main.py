@@ -50,6 +50,7 @@ def parseopt(args=None):
         o('-u', '--url',        action='store_true',  help='show url',              ) ,
         o('-d', '--desc',       action='store_true',  help='show description',      ) ,
         o('-p', '--pubdate',    action='store_true',  help='show publication date', ) ,
+        o('-U', '--updated',    action='store_true',  help='show last update date', ) ,
         o('-a', '--author',     action='store_true',  help='show author',           ) ,
         o('-c', '--comments',   action='store_true',  help='show comments',         ) ,
         o('-g', '--no-heading', action='store_true',  help='do not show headings',  ) ,
@@ -259,6 +260,9 @@ def setup_formatter(o):
 
     if o.pubdate:
         fmt.append('Pubdate: %(pubdate)s' if wh else '%(pubdate)s' )
+
+    if o.updated:
+        fmt.append('Updated: %(updated)s' if wh else '%(updated)s' )
 
     if o.title:
         fmt.append('Title: %(title)-50s' if wh else '%(title)-50s' )
