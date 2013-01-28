@@ -84,7 +84,7 @@ class Formatter(object):
             rendered[ph] = cb(entry)
 
         for i in ('pubdate', 'updated'):
-            if i in rendered:
+            if i in rendered and rendered[i]:
                 rendered[i] = self.format_tt(rendered[i])
 
         if self.striphtml:
