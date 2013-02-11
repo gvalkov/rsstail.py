@@ -183,8 +183,8 @@ def parseopt(args=None):
 
 
 def check_timespec(option, o, value):
-    ''' option type='timespec' validator/parser
-        1 -> 1 ; 5m -> 300 ; 1h -> 3600 '''
+    '''option type='timespec' validator/parser
+        1 -> 1 ; 5m -> 300 ; 1h -> 3600'''
 
     try:
         return int(value)
@@ -335,7 +335,8 @@ def tick(feeds, options, formatter, iteration):
 
         for entry in entries:
             out = formatter(entry)
-            print(out.rstrip(' '))
+            print(out.rstrip(' ').encode('utf-8'), file=sys.stdout)
+        sys.stdout.flush()
 
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
