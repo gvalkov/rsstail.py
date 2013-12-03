@@ -24,25 +24,25 @@ def safe_attrgetter(item, default=''):
 
 
 placeholders = {
-    'timestamp'  : None,
-    'id'         : safe_attrgetter('id'),
-    'title'      : safe_attrgetter('title'),
-    'link'       : safe_attrgetter('link'),
-    'desc'       : safe_attrgetter('description'),
-    'pubdate'    : safe_attrgetter('date_parsed'),
-    'updated'    : safe_attrgetter('updated_parsed'),
-    'created'    : None,
-    'expired'    : None,
-    'author'     : safe_attrgetter('author'),
-    'comments'   : None,
+    'id':      safe_attrgetter('id'),
+    'title':   safe_attrgetter('title'),
+    'link':    safe_attrgetter('link'),
+    'desc':    safe_attrgetter('description'),
+    'pubdate': safe_attrgetter('date_parsed'),
+    'updated': safe_attrgetter('updated_parsed'),
+    'created': None,
+    'expired': None,
+    'author':  safe_attrgetter('author'),
+    'comments':  None,
+    'timestamp': None,
     }
 
 
 class Formatter(object):
     ''' I interpolate a format string with feed parser entry values '''
 
-    PH_NEW = 0x1 # {:} placeholders
-    PH_OLD = 0x2 # %()s placeholders
+    PH_NEW = 0x1  # {:} placeholders
+    PH_OLD = 0x2  # %()s placeholders
 
     def __init__(self, fmt, time_fmt, striphtml=False):
         self.fmt = ustr(fmt)
@@ -75,9 +75,7 @@ class Formatter(object):
         return self.format(entry)
 
     def format(self, entry):
-        rendered = {
-            'timestamp' : self.format_dt(datetime.now()),
-        }
+        rendered = {'timestamp': self.format_dt(datetime.now())}
 
         for ph, cb in placeholders.items():
             if not cb: continue

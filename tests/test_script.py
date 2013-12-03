@@ -23,9 +23,11 @@ def test_run_no_args_no_opts():
     assert r.returncode == 0
     assert 'General Options:' in r.stdout
 
+
 def test_run_initial():
     r = run(cmd + ' -e 1 --initial 3 %s' % feed1)
     assert len(r.stdout.splitlines()) == 3
+
 
 def test_run_order():
     r = run(cmd + ' -e 1 --reverse --title %s' % feed1)
@@ -34,7 +36,7 @@ def test_run_order():
            'Title: pip_python2.6 #1003 (SUCCESS)',
            'Title: pip_python2.6 #1004 (SUCCESS)',
            'Title: pip_python2.6 #1005 (SUCCESS)',
-           'Title: pip_python2.6 #1006 (FAILURE)',]
+           'Title: pip_python2.6 #1006 (FAILURE)']
 
     res = [i.strip(' ') for i in r.stdout.splitlines()]
     assert res == exp
@@ -43,9 +45,11 @@ def test_run_order():
     res = [i.strip(' ') for i in r.stdout.splitlines()]
     assert res == list(reversed(exp))
 
+
 def test_run_headings():
     r = run(cmd + ' -e 1 --title --url --no-heading %s' % feed1)
     assert ('Title' not in r.stdout) and ('Link' not in r.stdout)
+
 
 def test_run_newer():
     r = run(cmd + ' -e 1 --newer "2012/01/04 11:00:00" %s' % feed1)
@@ -60,7 +64,7 @@ def test_run_newer():
     r = run(cmd + ' -e 1 --newer "2012/01/04 $#@!@#" %s' % feed1, expect_error=True)
     assert r.returncode == 1
 
+
 def test_run_striphtml():
     # TODO: find test feed
     r = run(cmd + ' -e 1 --desc --striphtml  %s' % feed1)
-
