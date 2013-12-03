@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-
-''' Generate bash/zsh completion files for rsstail '''
-
+'''Generate bash/zsh completion files for rsstail.'''
 
 from sys import argv, stdout, exit
 from rsstail.main import parseopt
@@ -58,11 +56,7 @@ complete -F _rsstail rsstail
 escapable = lambda c: c == '[' or c == ']' or c == '"'
 
 def escape(s):
-    res = []
-    for c in s:
-        if escapable(c): c = '\\%s' % c
-        res.append(c)
-
+    res = [('\\%s' % c) if escapable(c) else c for c in s]
     return ''.join(res)
 
 
@@ -70,10 +64,12 @@ def zshopts():
     fmt = '"%s[%s]%s%s"'
 
     def getmetavar(action):
-        if action.takes_value(): return ':arg'
-        else: return ''
+        if action.takes_value():
+            return ':arg'
+        else:
+            return ''
 
-    long_opts =  [(a._long_opts, getmetavar(a), a.help)  for a in options]
+    long_opts  = [(a._long_opts, getmetavar(a), a.help)  for a in options]
     short_opts = [(a._short_opts, getmetavar(a), a.help) for a in options]
 
     for op in (long_opts, short_opts):
@@ -95,4 +91,3 @@ if argv[1] == 'zsh':
 
 elif argv[1] == 'bash':
     stdout.write(bash_tmpl % bashopts())
-
