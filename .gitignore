@@ -12,3 +12,4 @@ pip-log.txt
 .ropeproject
 tags
 tests/test-output
+__pycache__/
