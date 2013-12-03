@@ -8,9 +8,6 @@ from os.path import dirname, isdir, join as pjoin
 
 here = dirname(__file__)
 
-requires = ('feedparser>=4.1',)
-tests_require = ('pytest', 'scripttest')
-
 classifiers = (
     'Environment :: Console',
     'Topic :: Utilities',
@@ -30,31 +27,20 @@ classifiers = (
 kw = {
     'name'                 : 'rsstail',
     'version'              : version(),
-
     'description'          : 'A command-line syndication feed monitor mimicking tail -f',
     'long_description'     : open(pjoin(here, 'README.rst')).read(),
-
     'author'               : 'Georgi Valkov',
     'author_email'         : 'georgi.t.valkov@gmail.com',
-
-    'license'              : 'New BSD License',
-
+    'license'              : 'Revised BSD License',
     'keywords'             : 'rss tail feed feedparser',
     'classifiers'          : classifiers,
-
     'url'                  : 'https://github.com/gvalkov/rsstail.py',
-
     'packages'             : ('rsstail',),
-    'entry_points'         : {
-        'console_scripts'  : ['rsstail = rsstail.main:main']
-    },
-
+    'entry_points'         : {'console_scripts': ['rsstail = rsstail.main:main']},
     'data_files'           : [],
-
-    'install_requires'     : requires,
-    'tests_require'        : tests_require,
+    'install_requires'     : ['feedparser>=5.1.3'],
+    'tests_require'        : ['pytest', 'scripttest'],
     'cmdclass'             : {},
-
     'zip_safe'             : True,
 }
 
@@ -70,8 +56,6 @@ class PyTest(Command):
         raise SystemExit(errno)
 
 kw['cmdclass']['test'] = PyTest
-setup(**kw)
-
 
 # try to install bash and zsh completions (emphasis on the *try*)
 if getuid() == 0:
@@ -84,5 +68,5 @@ if getuid() == 0:
         t = ('/usr/share/zsh/functions/Completion/Unix/', ['etc/_rsstail'])
         kw['data_files'].append(t)
 
-
-setup(**kw)
+if __name__ == '__main__':
+    setup(**kw)
