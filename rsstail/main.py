@@ -58,14 +58,13 @@ def parseopt(args=None):
         o('-f', '--format',     action='store',      help='output format (overrides other format options)'),
     )
 
-    epilog = '''
+    epilog = r'''
     Examples:
       %(prog)s --timestamp --pubdate --title --author <url1> <url2> <url3>
       %(prog)s --reverse --title <url> <username:password@url>
       %(prog)s --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
-      %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\\n' <url>
-      %(prog)s --format '{timestamp:<30} {title} {author}\\n' <url>
-
+      %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\n' <url>
+      %(prog)s --format '{timestamp:<30} {title} {author}\n' <url>
     ''' % {'prog': os.path.basename(sys.argv[0])}
 
     if not hasformat:
@@ -73,56 +72,51 @@ def parseopt(args=None):
         epilog.append(os.linesep)
         epilog = os.linesep.join(epilog)
 
-    placeholders_str = os.linesep.join(
-        sorted(
-            map(lambda x: 8*' ' + x, placeholders),
-            key=lambda x: len(x[0]) - len(x[1]))
-    )
-
     # readability is better than de-duplication in this case, imho
     if hasformat:
         format_help = '''\
-        Format specifiers must take one the following forms:
-            %%(placeholder)[flags]s
-            {placeholder:flags}
+        Format specifiers must have one the following forms:
+          %(placeholder)[flags]s
+          {placeholder:flags}
 
         Examples:
-            --format '%%(timestamp)s %%(pubdate)-30s %%(author)s\\n'
-            --format '%%(title)s was written by %%(author)s on %%(pubdate)s\\n'
-            --format '{timestamp:<20} {pubdate:^30} {author:>30}\\n'
+          --format '%(timestamp)s %(pubdate)-30s %(author)s\\n'
+          --format '%(title)s was written by %(author)s on %(pubdate)s\\n'
+          --format '{timestamp:<20} {pubdate:^30} {author:>30}\\n'
 
         Time format takes standard 'sprftime' specifiers:
-            --time-format '%%Y/%%m/%%d %%H:%%M:%%S'
-            --time-format 'Day of the year: %%j Month: %%b'
+          --time-format '%Y/%m/%d %H:%M:%S'
+          --time-format 'Day of the year: %j Month: %b'
 
         Useful flags in this context are:
-            %%(placeholder)-10s - left align and pad
-            %%(placeholder)10s  - right align and pad
-            {placeholder:<10}  - left align and pad
-            {placeholder:>10}  - right align and pad
-            {placeholder:^10}  - center align and pad
+          %(placeholder)-10s - left align and pad
+          %(placeholder)10s  - right align and pad
+          {placeholder:<10}  - left align and pad
+          {placeholder:>10}  - right align and pad
+          {placeholder:^10}  - center align and pad
+        '''
 
-        Available placeholders: \n%s
-        ''' % placeholders_str
     else:
         format_help = '''\
         Format specifiers have the following form:
-            %%(placeholder)[flags]s
+          %(placeholder)[flags]s
 
         Examples:
-            --format '%%(timestamp)s %%(pubdate)-30s %%(author)s\\n'
-            --format '%%(title)s was written by %%(author)s on %%(pubdate)s\\n'
+          --format '%(timestamp)s %(pubdate)-30s %(author)s\\n'
+          --format '%(title)s was written by %(author)s on %(pubdate)s\\n'
 
         Time format takes standard 'sprftime' specifiers:
-            --time-format '%%Y/%%m/%%d %%H:%%M:%%S'
-            --time-format 'Day of the year: %%j Month: %%b'
+          --time-format '%Y/%m/%d %H:%M:%S'
+          --time-format 'Day of the year: %j Month: %b'
 
         Useful flags in this context are:
-            %%(placeholder)-10s - left align and pad
-            %%(placeholder)10s  - right align and pad
+          %(placeholder)-10s - left align and pad
+          %(placeholder)10s  - right align and pad
+        '''
 
-        Available placeholders: \n%s
-        ''' % placeholders_str
+    res = [textwrap.dedent(format_help), 'Available placeholders:']
+    res += sorted(map(lambda x: 2*' ' + x, placeholders))
+    format_help =  os.linesep.join(res)
 
     description = None
 
@@ -160,7 +154,7 @@ def parseopt(args=None):
     }
 
     p = opt.OptionParser(**kw)
-    p.print_help_format = lambda: print(textwrap.dedent(format_help))
+    p.print_help_format = lambda: print(format_help)
 
     gen_group  = opt.OptionGroup(p, 'General Options')
     feed_group = opt.OptionGroup(p, 'Feed Options')
