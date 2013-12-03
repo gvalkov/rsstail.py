@@ -3,8 +3,8 @@
 
 from os import getuid
 from setuptools import setup, Command
-from rsstail.version import version
 from os.path import dirname, isdir, join as pjoin
+from rsstail import __version__
 
 here = dirname(__file__)
 
@@ -26,7 +26,7 @@ classifiers = (
 
 kw = {
     'name'                 : 'rsstail',
-    'version'              : version(),
+    'version'              : __version__,
     'description'          : 'A command-line syndication feed monitor mimicking tail -f',
     'long_description'     : open(pjoin(here, 'README.rst')).read(),
     'author'               : 'Georgi Valkov',

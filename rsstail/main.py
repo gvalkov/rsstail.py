@@ -355,8 +355,8 @@ def main():
         p.print_help_format(); sys.exit(0)
 
     if o.version:
-        from rsstail.version import version_verbose
-        stdout.write(version_verbose()+'\n')
+        from rsstail import __version__
+        stdout.write('rsstail version {} \n'.format(__version__))
         sys.exit(0)
 
     if len(args) == 0:
