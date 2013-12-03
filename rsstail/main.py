@@ -368,7 +368,7 @@ def main():
     if o.newer:
         try: o.newer = parse_date(o.newer)
         except ValueError as e: error(e)
-        log.debug("showing entries newer than {}".format(o.newer))
+        log.debug('showing entries newer than {}'.format(o.newer))
     else:
         o.newer = None
 

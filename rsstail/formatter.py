@@ -9,12 +9,12 @@ if version_info.major == 2: ustr = unicode
 else: ustr = str
 
 
-# Check if advanced string formatting (PEP 3101) is available
-hasformat = hasattr('', 'format')
+# Check if PEP 3101 string formatting is available
+hasformat = hasattr(str, 'format')
 
 
 def safe_attrgetter(item, default=''):
-    ''' operator.attrgetter with a default value '''
+    '''operator.attrgetter with a default value.'''
     def inner(obj):
         for name in item.split('.'):
             obj = getattr(obj, name, default)
@@ -39,7 +39,7 @@ placeholders = {
 
 
 class Formatter(object):
-    ''' I interpolate a format string with feed parser entry values '''
+    '''I interpolate a format string with feedparser values.'''
 
     PH_NEW = 0x1  # {:} placeholders
     PH_OLD = 0x2  # %()s placeholders
@@ -56,7 +56,7 @@ class Formatter(object):
         self.placeholder_style = self.plcstyle()
 
     def plcstyle(self):
-        ''' check if we're dealing with {} or %()s placeholders '''
+        '''Check if we're dealing with {} or %()s placeholders.'''
 
         if not hasformat:
             s = self.PH_OLD
