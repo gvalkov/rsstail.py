@@ -353,7 +353,7 @@ def main():
 
     if o.version:
         from rsstail import __version__
-        stdout.write('rsstail version {} \n'.format(__version__))
+        print('rsstail version {}'.format(__version__))
         sys.exit(0)
 
     if len(args) == 0:
