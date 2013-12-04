@@ -7,14 +7,13 @@ rsstail_ (C/libmrss_), but provides more customizable output
 formatting and additional features.
 
 Documentation:
-    http://rsstail-py.readthedocs.org/en/latest/
+    http://python-rsstail.readthedocs.org/en/latest/
 
 Development:
     https://github.com/gvalkov/rsstail.py
 
 Package:
     http://pypi.python.org/pypi/rsstail
-
 
 .. _rsstail:    http://www.vanheusden.com/rsstail/
 .. _feedstail:  http://pypi.python.org/pypi/feedstail/
