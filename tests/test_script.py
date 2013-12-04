@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-'''A set of really dumb tests that don't really prove anything.'''
-
 
 from os.path import dirname, abspath, join as pjoin
 from functools import partial

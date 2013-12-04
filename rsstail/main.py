@@ -121,7 +121,8 @@ def parseopt(args=None):
     description = None
 
     def _format_option_strings(option):
-        ''' ('-f', '--format')  ->  -f --format arg'''
+        ''' >>> _format_option_strings(('-f', '--format'))
+            -f --format arg'''
 
         opts = []
 
@@ -143,7 +144,7 @@ def parseopt(args=None):
     fmt = opt.IndentedHelpFormatter(max_help_position=40, indent_increment=1)
     fmt.format_option_strings = _format_option_strings
     fmt.format_heading = _format_heading
-    fmt.format_epilog = lambda x: x if x else ""
+    fmt.format_epilog = lambda x: x if x else ''
 
     kw = {
         'usage': '%prog [options] <url> [<url> ...]',
@@ -177,8 +178,10 @@ def parseopt(args=None):
 
 
 def check_timespec(option, o, value):
-    '''option type='timespec' validator/parser
-        1 -> 1 ; 5m -> 300 ; 1h -> 3600'''
+    '''Parse and validate 'timespec' options:
+       >>> check_timespec(1)    -> 1
+       >>> check_timespec('5m') -> 300
+       >>> check_timespec('1h') -> 3600'''
 
     try:
         return int(value)
@@ -186,7 +189,7 @@ def check_timespec(option, o, value):
         multiply = {'s': 1, 'm': 60, 'h': 3600}
         suffix = value[-1]
 
-        msg = "option %s: invalid timespec value %s - hint: 60, 60s, 1m, 1h"
+        msg = 'option %s: invalid timespec value %s - hint: 60, 60s, 1m, 1h'
         if suffix in multiply:
             try:
                 v = int(value[:-1])
