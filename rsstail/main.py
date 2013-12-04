@@ -332,7 +332,7 @@ def tick(feeds, options, formatter, iteration):
 
         for entry in entries:
             out = formatter(entry)
-            print(out.rstrip(' ').encode('utf-8'), file=sys.stdout)
+            print(out.rstrip(' '), file=sys.stdout)
         sys.stdout.flush()
 
         # needed for fetching/showing only new entries on next run
