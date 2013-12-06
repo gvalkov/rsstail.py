@@ -18,3 +18,4 @@ Package:
 .. _rsstail:    http://www.vanheusden.com/rsstail/
 .. _feedstail:  http://pypi.python.org/pypi/feedstail/
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
+.. _feedparser: https://pypi.python.org/pypi/feedparser
