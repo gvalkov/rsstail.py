@@ -305,8 +305,10 @@ def tick(feeds, options, formatter, iteration):
         feed = feedparser.parse(url, etag=etag, modified=last_mtime)
 
         if feed.bozo == 1:
-            msg = 'feed error \'%s\':\n%s' % (url, feed.bozo_exception)
-            error(msg, o.nofail)
+            safeexc = (feedparser.CharacterEncodingOverride,)
+            if not isinstance(feed.bozo_exception, safeexc):
+                msg = 'feed error \'%s\':\n%s' % (url, feed.bozo_exception)
+                error(msg, o.nofail)
 
         if iteration == 1 and o.initial:
             entries = feed.entries[:o.initial]
