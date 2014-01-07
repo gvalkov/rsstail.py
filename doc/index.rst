@@ -114,7 +114,7 @@ Colorizing output
 
 *Rsstail's'* output can be piped to one of the many console
 colorizers. Consider using one of the following tools: clide_,
-multitail_, ccze_, colorize_ or colorex_.
+multitail_, ccze_, colorize_, colorex_ or colout_.
 
 Example with clide_:
 
@@ -175,6 +175,7 @@ License
 .. _clide:      http://suso.suso.org/xulu/Clide
 .. _colorize:   http://colorize.raszi.hu/
 .. _colorex:    http://pypi.python.org/pypi/colorex/
+.. _colout:     http://nojhan.github.io/colout/
 .. _multitail:  http://www.vanheusden.com/multitail/
 .. _feedparser: http://code.google.com/p/feedparser/
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
