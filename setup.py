@@ -6,7 +6,6 @@ from setuptools import setup, Command
 from os.path import dirname, isdir, join as pjoin
 from rsstail import __version__
 
-here = dirname(__file__)
 
 classifiers = (
     'Environment :: Console',
@@ -28,7 +27,7 @@ kw = {
     'name'                 : 'rsstail',
     'version'              : __version__,
     'description'          : 'A command-line syndication feed monitor mimicking tail -f',
-    'long_description'     : open(pjoin(here, 'README.rst')).read(),
+    'long_description'     : open('README.rst').read(),
     'author'               : 'Georgi Valkov',
     'author_email'         : 'georgi.t.valkov@gmail.com',
     'license'              : 'Revised BSD License',
