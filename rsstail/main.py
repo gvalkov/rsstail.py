@@ -383,6 +383,13 @@ def main():
     # global iteration count
     iteration = 1
 
+    # handle stdout encoding on Python 2.x
+    if sys.version_info.major == 2 and not sys.stdout.isatty():
+        import locale, codecs
+        encoding = locale.getpreferredencoding()
+        sys.stdout = codecs.getwriter(encoding)(sys.stdout)
+        # todo: does this break PYTHONENCODING?
+
     while True:
         try:
             tick(feeds, o, formatter, iteration)
