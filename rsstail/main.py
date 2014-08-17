@@ -395,11 +395,11 @@ def main():
         try:
             tick(feeds, o, formatter, iteration)
 
-            if o.iterations and iteration >= o.iterations:
-                log.debug('maximum number of iterations (%d) reached' % o.iterations)
+            if isinstance(o.iterations, int) and iteration >= o.iterations:
+                log.debug('maximum number of iterations reached: %d', o.iterations)
                 sigint_handler()
 
-            iteration += 1  # limited only by available memory in >=2.5
+            iteration += 1  # limited only by available memory in >= 2.5
 
             log.debug('sleeping for %d seconds', o.interval)
             sleep(o.interval)
