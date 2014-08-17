@@ -18,7 +18,7 @@ from rsstail.formatter import placeholders
 from rsstail.formatter import Formatter, hasformat
 
 
-logfmt = '%(message)s'  #'%(levelname)-6s: %(message)s'
+logfmt = '! %(message)s' # '%(levelname)-6s %(message)s'
 logging.basicConfig(format=logfmt)
 log = logging.getLogger('')
 
@@ -206,13 +206,13 @@ class RsstailOption(opt.Option):
     TYPE_CHECKER['timespec'] = check_timespec
 
 
-def error(msg, flunk=False):
-    log.error(msg)
+def error(msg, flunk=False, *args):
+    log.error(msg, *args)
     if not flunk: sys.exit(1)
 
 
 def sigint_handler(num=None, frame=None):
-    print('...quitting\n', file=stderr)
+    print('... quitting\n', file=stderr)
     sys.exit(0)
 
 
@@ -288,8 +288,8 @@ def setup_formatter(o):
 
     formatter = Formatter(fmt, time_fmt, o.striphtml)
 
-    log.debug('using format %s' % repr(formatter.fmt))
-    log.debug('using time format %s' % repr(formatter.time_fmt))
+    log.debug('using format: %r', formatter.fmt)
+    log.debug('using time format: %r', formatter.time_fmt)
     return formatter
 
 
@@ -299,29 +299,30 @@ def tick(feeds, options, formatter, iteration):
     for url, el in feeds.items():
         etag, last_mtime, last_update = el
 
-        msg = 'parsing %s ...\n.etag:  %s\n.mtime: %s\n'
-        log.debug(msg % (url, etag, date_fmt(last_mtime)))
+        log.debug('parsing: %r', url)
+        log.debug('etag:  %s', etag)
+        log.debug('mtime: %s', date_fmt(last_mtime))
 
         feed = feedparser.parse(url, etag=etag, modified=last_mtime)
 
         if feed.bozo == 1:
             safeexc = (feedparser.CharacterEncodingOverride,)
             if not isinstance(feed.bozo_exception, safeexc):
-                msg = 'feed error \'%s\':\n%s' % (url, feed.bozo_exception)
-                error(msg, o.nofail)
+                msg = 'feed error %r:\n%s'
+                error(msg, o.nofail, url, feed.bozo_exception)
 
-        if iteration == 1 and o.initial:
+        if iteration == 1 and isinstance(o.initial, int):
             entries = feed.entries[:o.initial]
         else:
             entries = feed.entries
 
         if options.newer:
-            log.debug('showing entries older than %s' % date_fmt(last_update))
+            log.debug('showing entries older than %s', date_fmt(last_update))
             p = lambda entry: entry.date_parsed > options.newer
             entries = list(filter(p, entries))
 
         if last_update:
-            log.debug('showing entries older than %s' % date_fmt(last_update))
+            log.debug('showing entries older than %s', date_fmt(last_update))
             p = lambda entry: entry.updated_parsed > last_update
             entries = list(filter(p, entries))
 
@@ -355,7 +356,7 @@ def main():
 
     if o.version:
         from rsstail import __version__
-        print('rsstail version {}'.format(__version__))
+        print('rsstail version %s' % __version__)
         sys.exit(0)
 
     if len(args) == 0:
@@ -367,7 +368,7 @@ def main():
     if o.newer:
         try: o.newer = parse_date(o.newer)
         except ValueError as e: error(e)
-        log.debug('showing entries newer than {}'.format(o.newer))
+        log.debug('showing entries newer than %s', o.newer)
     else:
         o.newer = None
 
@@ -400,7 +401,7 @@ def main():
 
             iteration += 1  # limited only by available memory in >=2.5
 
-            log.debug('sleeping for %d seconds' % o.interval)
+            log.debug('sleeping for %d seconds', o.interval)
             sleep(o.interval)
         except Exception:
             if not o.nofail:
