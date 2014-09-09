@@ -35,7 +35,7 @@ def parseopt(args=None):
 
     feed_opts = (
         o('-i', '--interval',   action='store',      help='poll every <arg> seconds',   type='timespec', default='300'),
-        o('-e', '--iterations', action='store',      help='poll <arg> times and quit',  type='int', default=0),
+        o('-e', '--iterations', action='store',      help='poll <arg> times and quit',  type='int'),
         o('-n', '--initial',    action='store',      help='initially show <arg> items', type='int'),
         o('-w', '--newer',      action='store',      help='show items newer than <arg>'),
         o('-b', '--bytes',      action='store',      help='show only <arg> description/comment bytes', type='int'),
