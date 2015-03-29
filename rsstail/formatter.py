@@ -5,8 +5,10 @@ from datetime import datetime
 from sys import version_info
 
 
-if version_info.major == 2: ustr = unicode
-else: ustr = str
+if version_info.major == 2:
+    ustr = unicode
+else:
+    ustr = str
 
 
 # Check if PEP 3101 string formatting is available
@@ -66,7 +68,7 @@ class Formatter(object):
             cn = len(findall(r'{[^}]*}', self.fmt)), self.PH_NEW
             co = len(findall(r'%\([^\(]*\)[^ ]*s', self.fmt)), self.PH_OLD
 
-            # whichever style has more occurrences, wins
+            # Whichever style has the more occurrences, wins.
             s = max((cn, co))[1]
 
         return s
@@ -78,7 +80,8 @@ class Formatter(object):
         rendered = {'timestamp': self.format_dt(datetime.now())}
 
         for ph, cb in placeholders.items():
-            if not cb: continue
+            if not cb:
+                continue
             rendered[ph] = cb(entry)
 
         for i in ('pubdate', 'updated'):

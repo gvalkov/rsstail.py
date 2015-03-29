@@ -18,7 +18,7 @@ from rsstail.formatter import placeholders
 from rsstail.formatter import Formatter, hasformat
 
 
-logfmt = '! %(message)s' # '%(levelname)-6s %(message)s'
+logfmt = '! %(message)s'  # '%(levelname)-6s %(message)s'
 logging.basicConfig(format=logfmt)
 log = logging.getLogger('')
 
@@ -26,14 +26,14 @@ log = logging.getLogger('')
 def parseopt(args=None):
     o = RsstailOption
 
-    gen_opts = (
+    gen_opts = [
         o('-v', '--verbose',     action='count',      help='increase verbosity'),
         o('-V', '--version',     action='store_true', help='show version and exit'),
         o('-h', '--help',        action='store_true', help='show this help message and exit'),
         o('-x', '--help-format', action='store_true', help='show formatting help and exit'),
-    )
+    ]
 
-    feed_opts = (
+    feed_opts = [
         o('-i', '--interval',   action='store',      help='poll every <arg> seconds',   type='timespec', default='300'),
         o('-e', '--iterations', action='store',      help='poll <arg> times and quit',  type='int'),
         o('-n', '--initial',    action='store',      help='initially show <arg> items', type='int'),
@@ -42,9 +42,9 @@ def parseopt(args=None):
         o('-r', '--reverse',    action='store_true', help='show in reverse order'),
         o('-s', '--striphtml',  action='store_true', help='strip html tags'),
         o('-o', '--nofail',     action='store_true', help='do not exit on error'),
-    )
+    ]
 
-    fmt_opts = (
+    fmt_opts = [
         o('-t', '--timestamp',  action='store_true', help='show timestamp'),
         o('-l', '--title',      action='store_true', help='show title'),
         o('-u', '--url',        action='store_true', help='show url'),
@@ -56,7 +56,10 @@ def parseopt(args=None):
         o('-g', '--no-heading', action='store_true', help='do not show headings'),
         o('-m', '--time-format',action='store',      help='date/time format'),
         o('-f', '--format',     action='store',      help='output format (overrides other format options)'),
-    )
+    ]
+
+    prog = os.path.basename(sys.argv[0])
+    prog = prog if prog != '__main__.py' else 'rsstail'
 
     epilog = r'''
     Examples:
@@ -65,14 +68,14 @@ def parseopt(args=None):
       %(prog)s --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
       %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\n' <url>
       %(prog)s --format '{timestamp:<30} {title} {author}\n' <url>
-    ''' % {'prog': os.path.basename(sys.argv[0])}
+    ''' % {'prog': prog}
 
     if not hasformat:
         epilog = epilog.splitlines()[:-3]
         epilog.append(os.linesep)
         epilog = os.linesep.join(epilog)
 
-    # readability is better than de-duplication in this case, imho
+    # Readability is better than de-duplication in this case, imho.
     if hasformat:
         format_help = '''\
         Format specifiers must have one the following forms:
@@ -116,13 +119,15 @@ def parseopt(args=None):
 
     res = [textwrap.dedent(format_help), 'Available placeholders:']
     res += sorted(map(lambda x: 2*' ' + x, placeholders))
-    format_help =  os.linesep.join(res)
+    format_help = os.linesep.join(res)
 
     description = None
 
     def _format_option_strings(option):
-        ''' >>> _format_option_strings(('-f', '--format'))
-            -f --format arg'''
+        '''
+        >>> _format_option_strings(('-f', '--format'))
+        -f --format arg
+        '''
 
         opts = []
 
@@ -148,6 +153,7 @@ def parseopt(args=None):
 
     kw = {
         'usage': '%prog [options] <url> [<url> ...]',
+        'prog': prog,
         'epilog': textwrap.dedent(epilog),
         'formatter': fmt,
         'description': description,
@@ -208,7 +214,8 @@ class RsstailOption(opt.Option):
 
 def error(msg, flunk=False, *args):
     log.error(msg, *args)
-    if not flunk: sys.exit(1)
+    if not flunk:
+        sys.exit(1)
 
 
 def sigint_handler(num=None, frame=None):
@@ -349,10 +356,12 @@ def main():
     p, o, args = parseopt()
 
     if o.help or len(sys.argv) == 1:
-        p.print_help(); sys.exit(0)
+        p.print_help()
+        sys.exit(0)
 
     if o.help_format:
-        p.print_help_format(); sys.exit(0)
+        p.print_help_format()
+        sys.exit(0)
 
     if o.version:
         from rsstail import __version__
@@ -360,14 +369,17 @@ def main():
         sys.exit(0)
 
     if len(args) == 0:
-        p.print_help(); sys.exit(0)
+        p.print_help()
+        sys.exit(0)
 
     if o.verbose:
         log.setLevel(logging.DEBUG)
 
     if o.newer:
-        try: o.newer = parse_date(o.newer)
-        except ValueError as e: error(e)
+        try:
+            o.newer = parse_date(o.newer)
+        except ValueError as e:
+            error(e)
         log.debug('showing entries newer than %s', o.newer)
     else:
         o.newer = None

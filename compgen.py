@@ -12,7 +12,7 @@ usage = 'compgen.py bash|zsh > completion.sh\n'
 if len(argv) == 1 or argv[1] not in ('zsh', 'bash'):
     stdout.write(usage) ; exit(1)
 
-# get all options from all option groups
+# Get all options from all option groups.
 parser = parseopt()[0]
 options = sum([i.option_list for i in parser.option_groups], [])
 
@@ -20,7 +20,7 @@ options = sum([i.option_list for i in parser.option_groups], [])
 zsh_tmpl = '''\
 #compdef rsstail
 
-# automatically generated zsh completion for rsstail.py
+# Automatically generated zsh completion for rsstail.py
 # http://github.com/gvalkov/rsstail.py
 
 _arguments -s -S \\
@@ -31,7 +31,7 @@ _arguments -s -S \\
 '''
 
 bash_tmpl = '''\
-# automatically generated bash completion for rsstail.py
+# Automatically generated bash completion for rsstail.py
 # http://github.com/gvalkov/rsstail.py
 
 _rsstail() {
