@@ -138,10 +138,10 @@ projects for more information.
 Shell completion
 ----------------
 
-*Rsstail* comes with shell completion for bash and zsh.
+*Rsstail* comes with shell completion scripts for bash and zsh.
 
-    - **bash:** copy rsstail.sh_ to ``/etc/bash_completion.d/``
-    - **zsh:**  copy rsstail.zsh_ anywhere in ``$fpath``
+    - **bash:** copy rsstail.sh_ to ``/etc/bash_completion.d/``.
+    - **zsh:**  copy rsstail.zsh_ anywhere in ``$fpath``.
 
 If you are installing system-wide, the setup script will attempt to
 place these files in the right place.

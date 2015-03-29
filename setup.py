@@ -43,21 +43,31 @@ kw = {
     'zip_safe':         True,
 }
 
+trydirs_bash = [
+    '/etc/bash_completion.d',
+    '/usr/local/etc/bash_completion.d',
+]
+
+trydirs_zsh = [
+    '/etc/bash_completion.d'
+    # Debian
+    '/usr/share/zsh/functions/Completion/Unix/',
+    # CentOS/RHEL
+    '/usr/share/zsh/site-functions',
+    # FreeBSD
+    '/usr/local/share/zsh/site-functions/',
+]
+
 # Try to install bash and zsh completions (emphasis on the *try*).
 if getuid() == 0:
-    if isdir('/etc/bash_completion.d'):
-        t = ('/etc/bash_completion.d/', ['etc/rsstail.sh'])
-        kw['data_files'].append(t)
+    dirs = [i for i in trydirs_bash if isdir(i)]
+    for path in dirs:
+        kw['data_files'].append((path, ['etc/rsstail.sh']))
 
-    # This is only valid for fedora and most debians.
-    dirs = ['/usr/share/zsh/functions/Completion/Unix/',
-            '/usr/share/zsh/site-functions']
+    dirs = [i for i in trydirs_zsh if isdir(i)]
+    for path in dirs:
+        kw['data_files'].append((path, ['etc/_rsstail']))
 
-    for dir in dirs:
-        if isdir(dir):
-            t = (dir, ['etc/_rsstail'])
-            kw['data_files'].append(t)
-            continue
 
 if __name__ == '__main__':
     setup(**kw)
