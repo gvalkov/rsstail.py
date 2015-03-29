@@ -1,13 +1,13 @@
-Introduction
-============
+Rsstail
+=======
 
 *Rsstail* is a command-line syndication feed monitor with behaviour
-similar to 'tail -f'. *Rsstail* (Python/feedparser_) is inspired by
+similar to ``tail -f``. *Rsstail* (Python/feedparser_) is inspired by
 rsstail_ (C/libmrss_), but provides more customizable output
 formatting and additional features.
 
 Usage
-=====
+-----
 
 ::
 
@@ -86,31 +86,25 @@ Usage
     comments
     timestamp
 
-``{placeholder:flags}`` style placeholders are available only with Python **>= 2.7**.
+Please note that ``{placeholder:flags}`` style placeholders are
+available only with Python **>= 2.7**.
 
 Installing
-==========
+----------
 
-The latest stable version of rsstail is available on pypi, while the
-development version can be installed from github:
-
-.. code-block:: bash
-
-    $ pip install rsstail  # latest stable version
-    $ pip install git+git://github.com/gvalkov/rsstail.git  # latest development version
-
-Alternatively, you can install it manually like any other python package:
+The latest stable version of rsstail can be installed from pypi_:
 
 .. code-block:: bash
 
-    $ git clone git@github.com:gvalkov/rsstail.py.git
-    $ cd rsstail.py
-    $ git reset --hard HEAD $versiontag
-    $ python setup.py install
+    $ pip install rsstail
 
+Or simply put the standalone rsstail script in your ``$PATH`` and make
+it executable::
+
+    https://raw.githubusercontent.com/gvalkov/rsstail/master/rsstail.pyz
 
 Colorizing output
-=================
+-----------------
 
 *Rsstail's'* output can be piped to one of the many console
 colorizers. Consider using one of the following tools: clide_,
@@ -142,7 +136,7 @@ projects for more information.
 
 
 Shell completion
-================
+----------------
 
 *Rsstail* comes with shell completion for bash and zsh.
 
@@ -154,7 +148,7 @@ place these files in the right place.
 
 
 Similar projects
-================
+----------------
 
     - rsstail_
     - feedstail_
@@ -163,7 +157,7 @@ Similar projects
 
 
 License
-=======
+-------
 
 *Rsstail* is released under the terms of the `Revised BSD License`_.
 
@@ -183,3 +177,4 @@ License
 
 .. _rsstail.sh:  https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
 .. _rsstail.zsh: https://raw.github.com/gvalkov/rsstail.py/master/etc/_rsstail
+.. _pypi:        https://pypi.python.org/pypi/rsstail
