@@ -286,11 +286,12 @@ def setup_formatter(o):
     time_fmt = '%Y/%m/%d %H:%M:%S' if not o.time_format else o.time_format
 
     if o.format:
-        fmt = o.format
+        fmt = o.format.replace('\\n', '\n')
     elif not fmt:
         # default formatter
-        fmt = 'Title: %(title)s'
+        fmt = 'Title: %(title)s\n'
     else:
+        fmt.append('\n')
         fmt = '  '.join(fmt)
 
     formatter = Formatter(fmt, time_fmt, o.striphtml)
@@ -300,7 +301,7 @@ def setup_formatter(o):
     return formatter
 
 
-def tick(feeds, options, formatter, iteration):
+def tick(feeds, options, formatter, iteration, stream=sys.stdout):
     o = options
 
     for url, el in feeds.items():
@@ -342,8 +343,8 @@ def tick(feeds, options, formatter, iteration):
 
         for entry in entries:
             out = formatter(entry)
-            print(out.rstrip(' '), file=sys.stdout)
-        sys.stdout.flush()
+            stream.write(out)
+        stream.flush()
 
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
