@@ -1,11 +1,11 @@
 #compdef rsstail
 
-# automatically generated zsh completion for rsstail.py
+# Automatically generated zsh completion for rsstail.py
 # http://github.com/gvalkov/rsstail.py
 
 _arguments -s -S \
 "--verbose[increase verbosity]" \
-"--version[print version and exit]" \
+"--version[show version and exit]" \
 "--help[show this help message and exit]" \
 "--help-format[show formatting help and exit]" \
 "--interval[poll every <arg> seconds]:arg" \
@@ -13,7 +13,7 @@ _arguments -s -S \
 "--initial[initially show <arg> items]:arg" \
 "--newer[show items newer than <arg>]:arg" \
 "--bytes[show only <arg> description/comment bytes]:arg" \
-"--reverse[print in reverse order]" \
+"--reverse[show in reverse order]" \
 "--striphtml[strip html tags]" \
 "--nofail[do not exit on error]" \
 "--timestamp[show timestamp]" \
@@ -21,13 +21,14 @@ _arguments -s -S \
 "--url[show url]" \
 "--desc[show description]" \
 "--pubdate[show publication date]" \
+"--updated[show last update date]" \
 "--author[show author]" \
 "--comments[show comments]" \
 "--no-heading[do not show headings]" \
 "--time-format[date/time format]:arg" \
 "--format[output format (overrides other format options)]:arg" \
 "-v[increase verbosity]" \
-"-V[print version and exit]" \
+"-V[show version and exit]" \
 "-h[show this help message and exit]" \
 "-x[show formatting help and exit]" \
 "-i[poll every <arg> seconds]:arg" \
@@ -35,7 +36,7 @@ _arguments -s -S \
 "-n[initially show <arg> items]:arg" \
 "-w[show items newer than <arg>]:arg" \
 "-b[show only <arg> description/comment bytes]:arg" \
-"-r[print in reverse order]" \
+"-r[show in reverse order]" \
 "-s[strip html tags]" \
 "-o[do not exit on error]" \
 "-t[show timestamp]" \
@@ -43,6 +44,7 @@ _arguments -s -S \
 "-u[show url]" \
 "-d[show description]" \
 "-p[show publication date]" \
+"-U[show last update date]" \
 "-a[show author]" \
 "-c[show comments]" \
 "-g[do not show headings]" \

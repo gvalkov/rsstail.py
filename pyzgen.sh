@@ -7,7 +7,7 @@ set -xeu
 DESTFILE="${1:-./rsstail.pyz}"
 DESTFILE=$(readlink -f "$DESTFILE")
 PYZEXCLUDE="\*__pycache__ \*.pyo \*.pyc feedparser-\*"
-FEEDPARSER_URL="https://warehouse.python.org/packages/source/f/feedparser/feedparser-5.1.3.tar.gz"
+FEEDPARSER_URL="https://pypi.python.org/packages/source/f/feedparser/feedparser-5.2.1.tar.gz"
 
 #-----------------------------------------------------------------------------
 BUILDDIR=$(mktemp -d)
@@ -18,7 +18,7 @@ curl "$FEEDPARSER_URL" | tar -xz -C "$BUILDDIR"
 cp -r ./rsstail "$BUILDDIR"
 cp "$BUILDDIR"/feedparser-*/feedparser/feedparser.py "$BUILDDIR/rsstail/feedparser2.py"
 cp "$BUILDDIR"/feedparser-*/feedparser/feedparser.py "$BUILDDIR/rsstail/feedparser3.py"
-2to3 "$BUILDDIR/rsstail/feedparser3.py"
+python -m lib2to3 --write "$BUILDDIR/rsstail/feedparser3.py"
 
 #-----------------------------------------------------------------------------
 cat > "$BUILDDIR/__main__.py" <<EOF
@@ -30,7 +30,7 @@ if sys.version_info < (3,0):
     import rsstail.feedparser2
     sys.modules['feedparser'] = rsstail.feedparser2
 else:
-    import rsstailfeedparser3
+    import rsstail.feedparser3
     sys.modules['feedparser'] = rsstail.feedparser3
 
 from rsstail.main import main
