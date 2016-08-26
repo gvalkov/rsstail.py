@@ -332,13 +332,11 @@ def tick(feeds, opts, formatter, iteration, stream=sys.stdout):
 
         if opts.newer:
             log.debug('showing entries older than %s', date_fmt(last_update))
-            p = lambda entry: entry.date_parsed > opts.newer
-            entries = list(filter(p, entries))
+            entries = [entry for entry in entries if entry.date_parsed > opts.newer]
 
         if last_update:
             log.debug('showing entries older than %s', date_fmt(last_update))
-            p = lambda entry: entry.updated_parsed > last_update
-            entries = list(filter(p, entries))
+            entries = [entry for entry in entries if entry.updated_parsed > last_update]
 
         new_last_update = get_last_mtime(entries)
         if not new_last_update and not entries:
