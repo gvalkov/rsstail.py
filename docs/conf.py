@@ -13,15 +13,8 @@ master_doc = 'index'
 project = u'rsstail'
 copyright = u'2011-2016, Georgi Valkov'
 
-# read version from setup.py
-for line in open('../rsstail/__init__.py'):
-    m = re.search("__version__\s*=\s*'(.*)'", line)
-    if m:
-        release = m.group(1)
-        break
-
+release = '0.3.4'
 version = release
-
 exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all documents.

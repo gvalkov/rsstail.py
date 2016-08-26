@@ -24,6 +24,9 @@ logging.basicConfig(format='! %(message)s', level=logging.INFO)
 log = logging.getLogger(__file__)
 
 
+__version__ = '0.3.4'
+
+
 def parseopt(args=None):
     opts = RsstailOption
 
@@ -378,7 +381,6 @@ def main():
         sys.exit(0)
 
     if opts.version:
-        from rsstail import __version__
         print('rsstail version %s' % __version__)
         sys.exit(0)
 

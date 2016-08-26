@@ -4,7 +4,6 @@
 from os import getuid
 from setuptools import setup
 from os.path import isdir
-from rsstail import __version__
 
 
 classifiers = [
@@ -23,7 +22,7 @@ entry_points = {
 
 kw = {
     'name':             'rsstail',
-    'version':          __version__,
+    'version':          '0.3.4',
     'description':      'A command-line syndication feed monitor mimicking tail -f',
     'long_description': open('README.rst').read(),
     'author':           'Georgi Valkov',
