@@ -43,6 +43,7 @@ def parseopt(args=None):
         opts('-r', '--reverse', action='store_true', help='show in reverse order'),
         opts('-s', '--striphtml', action='store_true', help='strip html tags'),
         opts('-o', '--nofail', action='store_true', help='do not exit on error'),
+        opts('-q', '--unique', action='store_true', help='skip duplicate items')
     ]
 
     fmt_opts = [
@@ -309,9 +310,9 @@ def setup_formatter(opts):
     return formatter
 
 
-def tick(feeds, opts, formatter, iteration, stream=sys.stdout):
-    for url, el in feeds.items():
-        etag, last_mtime, last_update = el
+def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
+    for url, last_element_info in feeds.items():
+        etag, last_mtime, last_update = last_element_info
 
         log.debug('parsing: %r', url)
         log.debug('etag:  %s', etag)
@@ -346,6 +347,14 @@ def tick(feeds, opts, formatter, iteration, stream=sys.stdout):
             entries = reversed(entries)
 
         for entry in entries:
+            if seen_id_hashes is not None:
+                id_hash = hash(entry.id)
+                if id_hash in seen_id_hashes:
+                    continue
+
+                # Grows indefinitely at a rate of 32 bytes per entry.
+                seen_id_hashes[id_hash] = None
+
             out = formatter(entry)
             stream.write(out)
         stream.flush()
@@ -401,6 +410,9 @@ def main():
     # global iteration count
     iteration = 1
 
+    # The hashes of all seen post IDs. Maintained only if opts.unique is True.
+    seen_id_hashes = dict() if opts.unique else None
+
     # handle stdout encoding on Python 2.x
     if sys.version_info.major == 2 and not sys.stdout.isatty():
         import locale, codecs
@@ -410,7 +422,7 @@ def main():
 
     while True:
         try:
-            tick(feeds, opts, formatter, iteration)
+            tick(feeds, opts, formatter, seen_id_hashes, iteration)
 
             if isinstance(opts.iterations, int) and iteration >= opts.iterations:
                 log.debug('maximum number of iterations reached: %d', opts.iterations)
