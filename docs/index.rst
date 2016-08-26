@@ -15,76 +15,77 @@ Usage
     Usage: rsstail [options] <url> [<url> ...]
 
     General Options:
-    -v --verbose            increase verbosity
-    -V --version            show version and exit
-    -h --help               show this help message and exit
-    -x --help-format        show formatting help and exit
+      -v --verbose            increase verbosity
+      -V --version            show version and exit
+      -h --help               show this help message and exit
+      -x --help-format        show formatting help and exit
 
     Feed Options:
-    -i --interval <arg>     poll every <arg> seconds
-    -e --iterations <arg>   poll <arg> times and quit
-    -n --initial <arg>      initially show <arg> items
-    -w --newer <arg>        show items newer than <arg>
-    -b --bytes <arg>        show only <arg> description/comment bytes
-    -r --reverse            show in reverse order
-    -s --striphtml          strip html tags
-    -o --nofail             do not exit on error
+      -i --interval <arg>     poll every <arg> seconds
+      -e --iterations <arg>   poll <arg> times and quit
+      -n --initial <arg>      initially show <arg> items
+      -w --newer <arg>        show items newer than <arg>
+      -b --bytes <arg>        show only <arg> description/comment bytes
+      -r --reverse            show in reverse order
+      -s --striphtml          strip html tags
+      -o --nofail             do not exit on error
+      -q --unique             skip duplicate items
 
     Format Options:
-    -t --timestamp          show timestamp
-    -l --title              show title
-    -u --url                show url
-    -d --desc               show description
-    -p --pubdate            show publication date
-    -a --author             show author
-    -c --comments           show comments
-    -g --no-heading         do not show headings
-    -m --time-format <arg>  date/time format
-    -f --format <arg>       output format (overrides other format options)
+      -t --timestamp          show timestamp
+      -l --title              show title
+      -u --url                show url
+      -d --desc               show description
+      -p --pubdate            show publication date
+      -U --updated            show last update date
+      -a --author             show author
+      -c --comments           show comments
+      -g --no-heading         do not show headings
+      -m --time-format <arg>  date/time format
+      -f --format <arg>       output format (overrides other format options)
 
     Examples:
-    rsstail --timestamp --pubdate --title --author <url1> <url2> <url3>
-    rsstail --reverse --title <url> <username:password@url>
-    rsstail --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
-    rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
-    rsstail --format '{timestamp:<30} {title} {author}\n' <url>
-
+      rsstail --timestamp --pubdate --title --author <url1> <url2> <url3>
+      rsstail --reverse --title <url> <username:password@url>
+      rsstail --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
+      rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
+      rsstail --format '{timestamp:<30} {title} {author}\n' <url>
 
 ::
 
     $ rsstail --help-format
-    Format specifiers must take one the following forms:
-        %(placeholder)[flags]s
-        {placeholder:flags}
+    Format specifiers must have one the following forms:
+      %(placeholder)[flags]s
+      {placeholder:flags}
 
     Examples:
-        --format '%(timestamp)s %(pubdate)-30s %(author)s\n'
-        --format '%(title)s was written by %(author)s on %(pubdate)s\n'
-        --format '{timestamp:<20} {pubdate:^30} {author:>30}\n'
+      --format '%(timestamp)s %(pubdate)-30s %(author)s\n'
+      --format '%(title)s was written by %(author)s on %(pubdate)s\n'
+      --format '{timestamp:<20} {pubdate:^30} {author:>30}\n'
 
     Time format takes standard 'sprftime' specifiers:
-        --time-format '%Y/%m/%d %H:%M:%S'
-        --time-format 'Day of the year: %j Month: %b'
+      --time-format '%Y/%m/%d %H:%M:%S'
+      --time-format 'Day of the year: %j Month: %b'
 
     Useful flags in this context are:
-        %(placeholder)-10s - left align and pad
-        %(placeholder)10s  - right align and pad
-        {placeholder:<10}  - left align and pad
-        {placeholder:>10}  - right align and pad
-        {placeholder:^10}  - center align and pad
+      %(placeholder)-10s - left align and pad
+      %(placeholder)10s  - right align and pad
+      {placeholder:<10}  - left align and pad
+      {placeholder:>10}  - right align and pad
+      {placeholder:^10}  - center align and pad
 
     Available placeholders:
-    id
-    link
-    desc
-    title
-    author
-    updated
-    pubdate
-    expired
-    created
-    comments
-    timestamp
+      author
+      comments
+      created
+      desc
+      expired
+      id
+      link
+      pubdate
+      timestamp
+      title
+      updated
 
 Please note that ``{placeholder:flags}`` style placeholders are
 available only with Python **>= 2.7**.

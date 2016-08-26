@@ -3,8 +3,6 @@
 import sys, os, re
 import alabaster
 
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
 extensions = ['alabaster']
 templates_path = ['_templates']
 source_suffix = '.rst'
@@ -13,7 +11,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'rsstail'
-copyright = u'2011-2015, Georgi Valkov'
+copyright = u'2011-2016, Georgi Valkov'
 
 # read version from setup.py
 for line in open('../rsstail/__init__.py'):
