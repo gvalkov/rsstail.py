@@ -22,7 +22,7 @@ entry_points = {
 
 kw = {
     'name':             'rsstail',
-    'version':          '0.3.4',
+    'version':          '0.4.0',
     'description':      'A command-line syndication feed monitor mimicking tail -f',
     'long_description': open('README.rst').read(),
     'author':           'Georgi Valkov',

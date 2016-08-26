@@ -13,7 +13,7 @@ master_doc = 'index'
 project = u'rsstail'
 copyright = u'2011-2016, Georgi Valkov'
 
-release = '0.3.4'
+release = '0.4.0'
 version = release
 exclude_patterns = ['_build']
 
