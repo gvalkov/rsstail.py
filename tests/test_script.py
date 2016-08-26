@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-
 from os.path import dirname, abspath, join as pjoin
 from functools import partial
 from scripttest import TestFileEnvironment
@@ -30,11 +29,13 @@ def test_run_initial():
 def test_run_order():
     r = run(cmd + ' -e 1 --reverse --title %s' % feed1)
 
-    exp = ['Title: pip_python2.6 #1002 (SUCCESS)',
-           'Title: pip_python2.6 #1003 (SUCCESS)',
-           'Title: pip_python2.6 #1004 (SUCCESS)',
-           'Title: pip_python2.6 #1005 (SUCCESS)',
-           'Title: pip_python2.6 #1006 (FAILURE)']
+    exp = [
+        'Title: pip_python2.6 #1002 (SUCCESS)',
+        'Title: pip_python2.6 #1003 (SUCCESS)',
+        'Title: pip_python2.6 #1004 (SUCCESS)',
+        'Title: pip_python2.6 #1005 (SUCCESS)',
+        'Title: pip_python2.6 #1006 (FAILURE)'
+    ]
 
     res = [i.strip(' ') for i in r.stdout.splitlines()]
     assert res == exp

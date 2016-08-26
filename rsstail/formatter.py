@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import sys
 from datetime import datetime
-from sys import version_info
 
 
-if version_info.major == 2:
+if sys.version_info.major == 2:
     ustr = unicode
 else:
     ustr = str
@@ -79,10 +79,10 @@ class Formatter(object):
     def format(self, entry):
         rendered = {'timestamp': self.format_dt(datetime.now())}
 
-        for ph, cb in placeholders.items():
-            if not cb:
+        for placeholder, callback in placeholders.items():
+            if not callback:
                 continue
-            rendered[ph] = cb(entry)
+            rendered[placeholder] = callback(entry)
 
         for i in ('pubdate', 'updated'):
             if i in rendered and rendered[i]:
