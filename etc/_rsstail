@@ -16,6 +16,7 @@ _arguments -s -S \
 "--reverse[show in reverse order]" \
 "--striphtml[strip html tags]" \
 "--nofail[do not exit on error]" \
+"--unique[skip duplicate items]" \
 "--timestamp[show timestamp]" \
 "--title[show title]" \
 "--url[show url]" \
@@ -39,6 +40,7 @@ _arguments -s -S \
 "-r[show in reverse order]" \
 "-s[strip html tags]" \
 "-o[do not exit on error]" \
+"-q[skip duplicate items]" \
 "-t[show timestamp]" \
 "-l[show title]" \
 "-u[show url]" \

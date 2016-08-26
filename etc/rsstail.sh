@@ -6,7 +6,7 @@ _rsstail() {
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts="--verbose --version --help --help-format --interval --iterations --initial --newer --bytes --reverse --striphtml --nofail --timestamp --title --url --desc --pubdate --updated --author --comments --no-heading --time-format --format -v -V -h -x -i -e -n -w -b -r -s -o -t -l -u -d -p -U -a -c -g -m -f"
+    opts="--verbose --version --help --help-format --interval --iterations --initial --newer --bytes --reverse --striphtml --nofail --unique --timestamp --title --url --desc --pubdate --updated --author --comments --no-heading --time-format --format -v -V -h -x -i -e -n -w -b -r -s -o -q -t -l -u -d -p -U -a -c -g -m -f"
 
     if [[ ${cur} == -* ]] ; then
         COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
