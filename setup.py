@@ -20,6 +20,28 @@ entry_points = {
     'console_scripts': ['rsstail = rsstail.main:main']
 }
 
+install_requires = [
+    'feedparser >= 5.2.1'
+]
+
+extras_require = {
+    'test': [
+        'tox >= 2.6.0',
+        'pytest >= 3.0.3',
+        'scripttest >= 1.3',
+        'pytest-cov >= 2.3.1',
+    ],
+    'devel': [
+        'sphinx >= 1.4.6',
+        'alabaster >= 0.7.3',
+        'bumpversion >= 0.5.3',
+        'check-manifest >= 0.35',
+        'readme-renderer >= 16.0',
+        'flake8',
+        'pep8-naming',
+    ]
+}
+
 kw = {
     'name':             'rsstail',
     'version':          '0.4.0',
@@ -32,7 +54,8 @@ kw = {
     'url':              'https://github.com/gvalkov/rsstail.py',
     'classifiers':      classifiers,
     'packages':         ['rsstail'],
-    'install_requires': ['feedparser>=5.2.1'],
+    'install_requires': install_requires,
+    'extras_require':   extras_require,
     'entry_points':     entry_points,
     'data_files':       [],
     'zip_safe':         True,
