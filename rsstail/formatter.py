@@ -37,7 +37,8 @@ placeholders = {
     'author':  safe_attrgetter('author'),
     'comments':  None,
     'timestamp': None,
-    }
+    'utc-timestamp': None,
+}
 
 
 class Formatter(object):
@@ -77,7 +78,10 @@ class Formatter(object):
         return self.format(entry)
 
     def format(self, entry):
-        rendered = {'timestamp': self.format_dt(datetime.now())}
+        rendered = {
+            'timestamp': self.format_dt(datetime.now()),
+            'utc-timestamp': self.format_dt(datetime.utcnow()),
+        }
 
         for placeholder, callback in placeholders.items():
             if not callback:

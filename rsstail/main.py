@@ -50,7 +50,8 @@ def parseopt(args=None):
     ]
 
     fmt_opts = [
-        opt('-t', '--timestamp', action='store_true', help='show timestamp'),
+        opt('-t', '--timestamp', action='store_true', help='show local timestamp'),
+        opt('-T', '--utc-timestamp', action='store_true', help='show utc timestamp'),
         opt('-l', '--title', action='store_true', help='show title'),
         opt('-u', '--url', action='store_true', help='show url'),
         opt('-d', '--desc', action='store_true', help='show description'),
@@ -273,6 +274,9 @@ def setup_formatter(opts):
 
     if opts.timestamp:
         fmt.append('%(timestamp)s')
+
+    if opts.utc_timestamp:
+        fmt.append('%(utc-timestamp)s')
 
     if opts.pubdate:
         fmt.append('Pubdate: %(pubdate)s' if wh else '%(pubdate)s')
