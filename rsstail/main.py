@@ -28,39 +28,39 @@ __version__ = '0.4.0'
 
 
 def parseopt(args=None):
-    opts = RsstailOption
+    opt = RsstailOption
 
     gen_opts = [
-        opts('-v', '--verbose', action='count', help='increase verbosity'),
-        opts('-V', '--version', action='store_true', help='show version and exit'),
-        opts('-h', '--help', action='store_true', help='show this help message and exit'),
-        opts('-x', '--help-format', action='store_true', help='show formatting help and exit'),
+        opt('-v', '--verbose', action='count', help='increase verbosity'),
+        opt('-V', '--version', action='store_true', help='show version and exit'),
+        opt('-h', '--help', action='store_true', help='show this help message and exit'),
+        opt('-x', '--help-format', action='store_true', help='show formatting help and exit'),
     ]
 
     feed_opts = [
-        opts('-i', '--interval', action='store', help='poll every <arg> seconds', type='timespec', default='300'),
-        opts('-e', '--iterations', action='store', help='poll <arg> times and quit', type='int'),
-        opts('-n', '--initial', action='store', help='initially show <arg> items', type='int'),
-        opts('-w', '--newer', action='store', help='show items newer than <arg>'),
-        opts('-b', '--bytes', action='store', help='show only <arg> description/comment bytes', type='int'),
-        opts('-r', '--reverse', action='store_true', help='show in reverse order'),
-        opts('-s', '--striphtml', action='store_true', help='strip html tags'),
-        opts('-o', '--nofail', action='store_true', help='do not exit on error'),
-        opts('-q', '--unique', action='store_true', help='skip duplicate items')
+        opt('-i', '--interval', action='store', help='poll every <arg> seconds', type='timespec', default='300'),
+        opt('-e', '--iterations', action='store', help='poll <arg> times and quit', type='int'),
+        opt('-n', '--initial', action='store', help='initially show <arg> items', type='int'),
+        opt('-w', '--newer', action='store', help='show items newer than <arg>'),
+        opt('-b', '--bytes', action='store', help='show only <arg> description/comment bytes', type='int'),
+        opt('-r', '--reverse', action='store_true', help='show in reverse order'),
+        opt('-s', '--striphtml', action='store_true', help='strip html tags'),
+        opt('-o', '--nofail', action='store_true', help='do not exit on error'),
+        opt('-q', '--unique', action='store_true', help='skip duplicate items')
     ]
 
     fmt_opts = [
-        opts('-t', '--timestamp', action='store_true', help='show timestamp'),
-        opts('-l', '--title', action='store_true', help='show title'),
-        opts('-u', '--url', action='store_true', help='show url'),
-        opts('-d', '--desc', action='store_true', help='show description'),
-        opts('-p', '--pubdate', action='store_true', help='show publication date'),
-        opts('-U', '--updated', action='store_true', help='show last update date'),
-        opts('-a', '--author', action='store_true', help='show author'),
-        opts('-c', '--comments', action='store_true', help='show comments'),
-        opts('-g', '--no-heading', action='store_true', help='do not show headings'),
-        opts('-m', '--time-format', action='store', help='date/time format'),
-        opts('-f', '--format', action='store', help='output format (overrides other format options)'),
+        opt('-t', '--timestamp', action='store_true', help='show timestamp'),
+        opt('-l', '--title', action='store_true', help='show title'),
+        opt('-u', '--url', action='store_true', help='show url'),
+        opt('-d', '--desc', action='store_true', help='show description'),
+        opt('-p', '--pubdate', action='store_true', help='show publication date'),
+        opt('-U', '--updated', action='store_true', help='show last update date'),
+        opt('-a', '--author', action='store_true', help='show author'),
+        opt('-c', '--comments', action='store_true', help='show comments'),
+        opt('-g', '--no-heading', action='store_true', help='do not show headings'),
+        opt('-m', '--time-format', action='store', help='date/time format'),
+        opt('-f', '--format', action='store', help='output format (overrides other format options)'),
     ]
 
     prog = os.path.basename(sys.argv[0])
