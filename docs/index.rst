@@ -106,7 +106,7 @@ The latest stable version of rsstail can be installed from pypi_:
 Or simply put the standalone rsstail script in your ``$PATH`` and make
 it executable::
 
-    https://github.com/gvalkov/rsstail.py/releases/download/v0.4.0/rsstail.pyz.zip
+    https://github.com/gvalkov/rsstail.py/releases/download/v0.5.0/rsstail.pyz.zip
 
 Colorizing output
 -----------------

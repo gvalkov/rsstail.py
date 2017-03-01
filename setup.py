@@ -48,7 +48,7 @@ extras_require = {
 
 kw = {
     'name':             'rsstail',
-    'version':          '0.4.0',
+    'version':          '0.5.0',
     'description':      'A command-line syndication feed monitor mimicking tail -f',
     'long_description': open('README.rst').read(),
     'author':           'Georgi Valkov',
