@@ -360,7 +360,9 @@ def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
 
             out = formatter(entry)
             stream.write(out)
-        stream.flush()
+
+        if hasattr(stream, 'flush'):
+            stream.flush()
 
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, 'etag', None)
