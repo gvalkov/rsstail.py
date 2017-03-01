@@ -17,7 +17,8 @@ _arguments -s -S \
 "--striphtml[strip html tags]" \
 "--nofail[do not exit on error]" \
 "--unique[skip duplicate items]" \
-"--timestamp[show timestamp]" \
+"--timestamp[show local timestamp]" \
+"--utc-timestamp[show utc timestamp]" \
 "--title[show title]" \
 "--url[show url]" \
 "--desc[show description]" \
@@ -41,7 +42,8 @@ _arguments -s -S \
 "-s[strip html tags]" \
 "-o[do not exit on error]" \
 "-q[skip duplicate items]" \
-"-t[show timestamp]" \
+"-t[show local timestamp]" \
+"-T[show utc timestamp]" \
 "-l[show title]" \
 "-u[show url]" \
 "-d[show description]" \
