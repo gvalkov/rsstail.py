@@ -14,3 +14,4 @@ tags
 tests/test-output
 __pycache__/
 docs/_build/
+rsstail.pyz
