@@ -4,6 +4,9 @@ set -xeu
 # Bundles feedparser and rsstail into a stand-alone, executable zip file.
 # Usage: pyzgen.sh [<destination.pyz>]
 
+# This script can be replaced with zipapp once a feedparser that supports
+# Python 2 and 3 from the same codebase is released.
+
 DESTFILE="${1:-./rsstail.pyz}"
 DESTFILE=$(readlink -f "$DESTFILE")
 PYZEXCLUDE="\*__pycache__ \*.pyo \*.pyc feedparser-\*"
