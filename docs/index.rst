@@ -32,7 +32,8 @@ Usage
     -q --unique             skip duplicate items
 
   Format Options:
-    -t --timestamp          show timestamp
+    -t --timestamp          show local timestamp
+    -T --utc-timestamp      show utc timestamp
     -l --title              show title
     -u --url                show url
     -d --desc               show description
@@ -50,6 +51,7 @@ Usage
     rsstail --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
     rsstail --format '%(timestamp)-30s %(title)s %(author)s\n' <url>
     rsstail --format '{timestamp:<30} {title} {author}\n' <url>
+
 
 ::
 
@@ -86,6 +88,8 @@ Usage
     timestamp
     title
     updated
+    utc-timestamp
+
 
 Please note that ``{placeholder:flags}`` style placeholders are
 available only with Python **>= 2.7**.
@@ -102,7 +106,7 @@ The latest stable version of rsstail can be installed from pypi_:
 Or simply put the standalone rsstail script in your ``$PATH`` and make
 it executable::
 
-    https://github.com/gvalkov/rsstail.py/raw/master/rsstail.pyz
+    https://github.com/gvalkov/rsstail.py/releases/download/v0.4.0/rsstail.pyz.zip
 
 Colorizing output
 -----------------

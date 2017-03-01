@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sys, os, re
 import alabaster
 
 extensions = ['alabaster']
@@ -11,7 +10,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'rsstail'
-copyright = u'2011-2016, Georgi Valkov'
+copyright = u'2011-2017, Georgi Valkov'
 
 release = '0.4.0'
 version = release
@@ -39,7 +38,7 @@ pygments_style = 'sphinx'
 html_theme_path = [alabaster.get_path()]
 html_theme = 'alabaster'
 html_sidebars = {
-   '**': []
+    '**': []
 }
 
 #html_theme_options = {}
@@ -64,8 +63,8 @@ htmlhelp_basename = 'rsstaildoc'
 
 latex_elements = {}
 latex_documents = [
-  ('index', 'rsstail.tex', u'Rsstail Documentation',
-   u'Georgi Valkov', 'manual'),
+    ('index', 'rsstail.tex', u'Rsstail Documentation',
+     u'Georgi Valkov', 'manual'),
 ]
 #latex_logo = None
 #latex_use_parts = False
@@ -81,7 +80,7 @@ man_pages = [
 ]
 
 texinfo_documents = [
-  ('index', 'rsstail', u'Rsstail Documentation',
-   u'Georgi Valkov', 'rsstail', 'A command-line syndication feed monitor with behaviour similar to tail -f',
-   'Miscellaneous'),
+    ('index', 'rsstail', u'Rsstail Documentation',
+     u'Georgi Valkov', 'rsstail', 'A command-line syndication feed monitor with behaviour similar to tail -f',
+     'Miscellaneous'),
 ]
