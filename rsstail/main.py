@@ -14,7 +14,7 @@ import optparse
 from datetime import datetime as dt
 
 import feedparser
-
+import re
 
 from rsstail.formatter import placeholders
 from rsstail.formatter import Formatter, hasformat
@@ -43,6 +43,7 @@ def parseopt(args=None):
         opt('-n', '--initial', action='store', help='initially show <arg> items', type='int'),
         opt('-w', '--newer', action='store', help='show items newer than <arg>'),
         opt('-b', '--bytes', action='store', help='show only <arg> description/comment bytes', type='int'),
+        opt('-k', '--keyword', action='store', help='filter title with the keywords'),
         opt('-r', '--reverse', action='store_true', help='show in reverse order'),
         opt('-s', '--striphtml', action='store_true', help='strip html tags'),
         opt('-o', '--nofail', action='store_true', help='do not exit on error'),
@@ -74,6 +75,7 @@ def parseopt(args=None):
       %(prog)s --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
       %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\n' <url>
       %(prog)s --format '{timestamp:<30} {title} {author}\n' <url>
+      %(prog)s --keyword 'python regular express syntax' <url>
     ''' % {'prog': prog}
 
     if not hasformat:
@@ -361,6 +363,9 @@ def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
 
                 # Grows indefinitely at a rate of 32 bytes per entry.
                 seen_id_hashes[id_hash] = None
+            if opts.keyword:
+                if not re.search(opts.keyword, entry.title):
+                    continue
 
             out = formatter(entry)
             stream.write(out)
