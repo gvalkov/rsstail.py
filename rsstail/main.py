@@ -24,7 +24,7 @@ logging.basicConfig(format='! %(message)s', level=logging.INFO)
 log = logging.getLogger(__file__)
 
 
-__version__ = '0.5.0'
+__version__ = '0.5.1'
 
 
 def parseopt(args=None):
