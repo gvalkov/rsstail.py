@@ -40,10 +40,9 @@ homepage = "https://github.com/gvalkov/rsstail.py"
 [project.scripts]
 rsstail = "rsstail.main:main"
 
-[tool.black]
-line_length = 120
-
 [build-system]
 requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
+[tool.black]
+line_length = 120
