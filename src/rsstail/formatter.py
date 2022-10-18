@@ -1,18 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-import sys
+import re
 from datetime import datetime
-
-
-if sys.version_info.major == 2:
-    ustr = unicode
-else:
-    ustr = str
-
-
-# Check if PEP 3101 string formatting is available
-hasformat = hasattr(str, 'format')
 
 
 def safe_attrgetter(item, default=''):
@@ -48,7 +38,7 @@ class Formatter(object):
     PH_OLD = 0x2  # %()s placeholders
 
     def __init__(self, fmt, time_fmt, striphtml=False):
-        self.fmt = ustr(fmt)
+        self.fmt = str(fmt)
         self.time_fmt = time_fmt
 
         self.striphtml = striphtml
@@ -61,16 +51,11 @@ class Formatter(object):
     def plcstyle(self):
         '''Check if we're dealing with {} or %()s placeholders.'''
 
-        if not hasformat:
-            s = self.PH_OLD
-        else:
-            from re import findall
+        cn = len(re.findall(r'{[^}]*}', self.fmt)), self.PH_NEW
+        co = len(re.findall(r'%\([^\(]*\)[^ ]*s', self.fmt)), self.PH_OLD
 
-            cn = len(findall(r'{[^}]*}', self.fmt)), self.PH_NEW
-            co = len(findall(r'%\([^\(]*\)[^ ]*s', self.fmt)), self.PH_OLD
-
-            # Whichever style has the more occurrences, wins.
-            s = max((cn, co))[1]
+        # Whichever style has the more occurrences, wins.
+        s = max((cn, co))[1]
 
         return s
 

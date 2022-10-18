@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-# encoding: utf-8
-
-from __future__ import print_function
 
 import os
 import sys
@@ -15,9 +12,8 @@ from datetime import datetime as dt
 
 import feedparser
 
-
 from rsstail.formatter import placeholders
-from rsstail.formatter import Formatter, hasformat
+from rsstail.formatter import Formatter
 
 
 logging.basicConfig(format='! %(message)s', level=logging.INFO)
@@ -76,55 +72,30 @@ def parseopt(args=None):
       %(prog)s --format '{timestamp:<30} {title} {author}\n' <url>
     ''' % {'prog': prog}
 
-    if not hasformat:
-        epilog = epilog.splitlines()[:-3]
-        epilog.append(os.linesep)
-        epilog = os.linesep.join(epilog)
+    format_help = '''\
+    Format specifiers must have one the following forms:
+      %(placeholder)[flags]s
+      {placeholder:flags}
 
-    # Readability is better than de-duplication in this case, imho.
-    if hasformat:
-        format_help = '''\
-        Format specifiers must have one the following forms:
-          %(placeholder)[flags]s
-          {placeholder:flags}
+    Examples:
+      --format '%(timestamp)s %(pubdate)-30s %(author)s\\n'
+      --format '%(title)s was written by %(author)s on %(pubdate)s\\n'
+      --format '{timestamp:<20} {pubdate:^30} {author:>30}\\n'
 
-        Examples:
-          --format '%(timestamp)s %(pubdate)-30s %(author)s\\n'
-          --format '%(title)s was written by %(author)s on %(pubdate)s\\n'
-          --format '{timestamp:<20} {pubdate:^30} {author:>30}\\n'
+    Time format takes standard 'sprftime' specifiers:
+      --time-format '%Y/%m/%d %H:%M:%S'
+      --time-format 'Day of the year: %j Month: %b'
 
-        Time format takes standard 'sprftime' specifiers:
-          --time-format '%Y/%m/%d %H:%M:%S'
-          --time-format 'Day of the year: %j Month: %b'
-
-        Useful flags in this context are:
-          %(placeholder)-10s - left align and pad
-          %(placeholder)10s  - right align and pad
-          {placeholder:<10}  - left align and pad
-          {placeholder:>10}  - right align and pad
-          {placeholder:^10}  - center align and pad
-        '''
-
-    else:
-        format_help = '''\
-        Format specifiers have the following form:
-          %(placeholder)[flags]s
-
-        Examples:
-          --format '%(timestamp)s %(pubdate)-30s %(author)s\\n'
-          --format '%(title)s was written by %(author)s on %(pubdate)s\\n'
-
-        Time format takes standard 'sprftime' specifiers:
-          --time-format '%Y/%m/%d %H:%M:%S'
-          --time-format 'Day of the year: %j Month: %b'
-
-        Useful flags in this context are:
-          %(placeholder)-10s - left align and pad
-          %(placeholder)10s  - right align and pad
-        '''
+    Useful flags in this context are:
+      %(placeholder)-10s - left align and pad
+      %(placeholder)10s  - right align and pad
+      {placeholder:<10}  - left align and pad
+      {placeholder:>10}  - right align and pad
+      {placeholder:^10}  - center align and pad
+    '''
 
     res = [textwrap.dedent(format_help), 'Available placeholders:']
-    res += sorted(map(lambda x: 2*' ' + x, placeholders))
+    res += sorted('  ' + x for x in placeholders)
     format_help = os.linesep.join(res)
 
     description = None
@@ -420,13 +391,6 @@ def main():
 
     # The hashes of all seen post IDs. Maintained only if opts.unique is True.
     seen_id_hashes = dict() if opts.unique else None
-
-    # handle stdout encoding on Python 2.x
-    if sys.version_info.major == 2 and not sys.stdout.isatty():
-        import locale, codecs
-        encoding = locale.getpreferredencoding()
-        sys.stdout = codecs.getwriter(encoding)(sys.stdout)
-        # todo: does this break PYTHONENCODING?
 
     while True:
         try:

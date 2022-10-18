@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# encoding: utf-8
-
 from os.path import dirname, abspath, join as pjoin
 from functools import partial
 from scripttest import TestFileEnvironment
