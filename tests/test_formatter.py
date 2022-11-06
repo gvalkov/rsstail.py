@@ -4,17 +4,17 @@ from rsstail.formatter import Formatter
 
 
 def test_placeholder_style_detect():
-    f = Formatter('{asdf} {zxcv} {qwerty}', None)
+    f = Formatter("{asdf} {zxcv} {qwerty}", None)
     assert f.placeholder_style == f.PH_NEW
 
-    f = Formatter('%(asdf)s %(zxcv)s %(qwerty)-20s', None)
+    f = Formatter("%(asdf)s %(zxcv)s %(qwerty)-20s", None)
     assert f.placeholder_style == f.PH_OLD
 
-    f = Formatter('{asdf} %(zxcv)s %(qwerty)s', None)
+    f = Formatter("{asdf} %(zxcv)s %(qwerty)s", None)
     assert f.placeholder_style == f.PH_OLD
 
-    f = Formatter('{asdf} {zxcv} %(qwerty)s', None)
+    f = Formatter("{asdf} {zxcv} %(qwerty)s", None)
     assert f.placeholder_style == f.PH_NEW
 
-    f = Formatter('{asdf} {zxcv} %(qwerty)s %(azerty)s', None)
+    f = Formatter("{asdf} {zxcv} %(qwerty)s %(azerty)s", None)
     assert f.placeholder_style == f.PH_OLD
