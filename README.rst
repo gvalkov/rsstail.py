@@ -165,13 +165,13 @@ License
 *Rsstail* is released under the terms of the `Revised BSD License`_.
 
 .. _rsstail:    http://www.vanheusden.com/rsstail/
-.. _feedstail:  http://pypi.python.org/pypi/feedstail/
+.. _feedstail:  https://pypi.org/project/feedstail/
 .. _theyoke:    http://github.com/mackers/theyoke/
 .. _wag:        http://github.com/knobe/wag/
 .. _ccze:       http://bonehunter.rulez.org/CCZE.html
 .. _clide:      http://suso.suso.org/xulu/Clide
 .. _colorize:   http://colorize.raszi.hu/
-.. _colorex:    http://pypi.python.org/pypi/colorex/
+.. _colorex:    https://pypi.org/project/colorex/
 .. _colout:     http://nojhan.github.io/colout/
 .. _multitail:  http://www.vanheusden.com/multitail/
 .. _feedparser: http://code.google.com/p/feedparser/
@@ -180,4 +180,4 @@ License
 
 .. _rsstail.sh:  https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
 .. _rsstail.zsh: https://raw.github.com/gvalkov/rsstail.py/master/etc/_rsstail
-.. _pypi:        https://pypi.python.org/pypi/rsstail
+.. _pypi:        https://pypi.org/project/rsstail/
