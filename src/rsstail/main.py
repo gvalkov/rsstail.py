@@ -343,7 +343,7 @@ def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
 
         # needed for fetching/showing only new entries on next run
         etag = getattr(feed, "etag", None)
-        last_mtime = getattr(feed.feed, "modified_parsed", None)
+        last_mtime = getattr(feed, "modified_parsed", None)
 
         feeds[url] = (etag, last_mtime, new_last_update)
 
