@@ -312,11 +312,11 @@ def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
             entries = feed.entries
 
         if opts.newer:
-            log.debug("showing entries older than %s", date_fmt(last_update))
+            log.debug("showing entries newer than %s", date_fmt(opts.newer))
             entries = [entry for entry in entries if entry.date_parsed > opts.newer]
 
         if last_update:
-            log.debug("showing entries older than %s", date_fmt(last_update))
+            log.debug("showing entries newer than %s", date_fmt(last_update))
             entries = [entry for entry in entries if entry.updated_parsed > last_update]
 
         new_last_update = get_last_mtime(entries)
