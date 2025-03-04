@@ -167,14 +167,14 @@ License
 .. _rsstail:    http://www.vanheusden.com/rsstail/
 .. _feedstail:  http://pypi.python.org/pypi/feedstail/
 .. _theyoke:    http://github.com/mackers/theyoke/
-.. _wag:        http://github.com/knobe/wag/
+.. _wag:        https://github.com/tylerharper/wag
 .. _ccze:       http://bonehunter.rulez.org/CCZE.html
 .. _clide:      http://suso.suso.org/xulu/Clide
 .. _colorize:   http://colorize.raszi.hu/
 .. _colorex:    http://pypi.python.org/pypi/colorex/
 .. _colout:     http://nojhan.github.io/colout/
 .. _multitail:  http://www.vanheusden.com/multitail/
-.. _feedparser: http://code.google.com/p/feedparser/
+.. _feedparser: https://github.com/kurtmckee/feedparser
 .. _libmrss:    http://www.autistici.org/bakunin/libmrss/doc/
 .. _`Revised BSD License`: https://raw.github.com/gvalkov/rsstail.py/master/LICENSE
 
