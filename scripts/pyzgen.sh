@@ -10,7 +10,7 @@ set -xeu
 DESTFILE="${1:-./rsstail.pyz}"
 DESTFILE=$(readlink -f "$DESTFILE")
 PYZEXCLUDE="\*__pycache__ \*.pyo \*.pyc feedparser-\*"
-FEEDPARSER_URL="https://pypi.python.org/packages/source/f/feedparser/feedparser-5.2.1.tar.gz"
+FEEDPARSER_URL="https://pypi.org/packages/source/f/feedparser/feedparser-5.2.1.tar.gz"
 
 #-----------------------------------------------------------------------------
 BUILDDIR=$(mktemp -d)
