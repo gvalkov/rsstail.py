@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# encoding: utf-8
 
 import re
 from datetime import datetime
@@ -32,7 +31,7 @@ placeholders = {
 }
 
 
-class Formatter(object):
+class Formatter:
     """I interpolate a format string with feedparser values."""
 
     PH_NEW = 0x1  # {:} placeholders

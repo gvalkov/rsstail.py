@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import os
 import sys
 import copy
@@ -12,8 +10,8 @@ from datetime import datetime as dt
 
 import feedparser
 
-from rsstail.formatter import placeholders
-from rsstail.formatter import Formatter
+from . import placeholders
+from . import Formatter
 
 
 logging.basicConfig(format="! %(message)s", level=logging.INFO)
@@ -70,9 +68,7 @@ def parseopt(args=None):
       %(prog)s --interval 60|60s|5m|1h --newer "2011/12/20 23:50:12" <url>
       %(prog)s --format '%%(timestamp)-30s %%(title)s %%(author)s\n' <url>
       %(prog)s --format '{timestamp:<30} {title} {author}\n' <url>
-    """ % {
-        "prog": prog
-    }
+    """ % {"prog": prog}
 
     format_help = """\
     Format specifiers must have one the following forms:

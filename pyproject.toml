@@ -45,6 +45,9 @@ line-length = 120
 [tool.ruff.lint]
 ignore = ["E265", "E241", "F403", "F401", "E401"]
 
+[tool.bumpversion]
+current_version = "0.5.1"
+
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
 
