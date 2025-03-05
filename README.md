@@ -1,5 +1,11 @@
 # Rsstail
 
+<p>
+    <a href="https://pypi.python.org/pypi/rsstail"><img alt="pypi version" src="https://img.shields.io/pypi/v/rsstail.svg"></a>
+    <a href="https://github.com/gvalkov/rsstail.py/blob/main/LICENSE.txt"><img alt="License" src="https://img.shields.io/pypi/l/rsstail"></a>
+</p>
+
+
 *Rsstail* is a command-line syndication feed monitor with behaviour
 similar to `tail -f`. *Rsstail* (Python/[feedparser]) is inspired by
 [rsstail] (C/[libmrss]), but provides more customizable output
@@ -83,9 +89,6 @@ formatting and additional features.
       updated
       utc-timestamp
 
-Please note that `{placeholder:flags}` style placeholders are available
-only with Python **\>= 2.7**.
-
 ## Installing
 
 The latest stable version of rsstail can be installed from [pypi][]:
@@ -97,7 +100,8 @@ $ pip install rsstail
 Or simply put the standalone rsstail script in your `$PATH` and make it
 executable:
 
-    https://github.com/gvalkov/rsstail.py/releases/download/v0.5.0/rsstail.pyz.zip
+    sudo curl -L -o /usr/local/bin/rsstail https://github.com/gvalkov/rsstail.py/releases/download/v0.5.0/rsstail.pyz.zip
+    sudo chmod 0755 /usr/local/bin/rsstail
 
 ## Colorizing output
 
@@ -157,9 +161,9 @@ place these files in the right place.
   [colorize]: http://colorize.raszi.hu/
   [colorex]: https://pypi.org/project/colorex/
   [colout]: http://nojhan.github.io/colout/
-  [rsstail.sh]: https://raw.github.com/gvalkov/rsstail.py/master/etc/rsstail.sh
-  [rsstail.zsh]: https://raw.github.com/gvalkov/rsstail.py/master/etc/_rsstail
+  [rsstail.sh]: https://raw.github.com/gvalkov/rsstail.py/main/etc/rsstail.sh
+  [rsstail.zsh]: https://raw.github.com/gvalkov/rsstail.py/main/etc/_rsstail
   [feedstail]: https://pypi.org/project/feedstail/
   [theyoke]: http://github.com/mackers/theyoke/
   [wag]: https://github.com/tylerharper/wag
-  [Revised BSD License]: https://raw.github.com/gvalkov/rsstail.py/master/LICENSE
+  [Revised BSD License]: https://raw.github.com/gvalkov/rsstail.py/main/LICENSE.txt
