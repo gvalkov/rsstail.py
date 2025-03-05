@@ -16,4 +16,4 @@ rsstail.pyz:
 clean:
 	-rm -f $(TARGETS)
 
-PHONY: standalone compgen
+PHONY: compgen clean all

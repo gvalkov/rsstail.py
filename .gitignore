@@ -2,19 +2,13 @@
 *.py[co]
 *.egg
 *.egg-info/
-develop-eggs/
+__pycache__/
 dist/
 build/
-dropin.cache
-pip-log.txt
-.installed.cfg
 .coverage
-.ropeproject
-tags
 tests/test-output
-__pycache__/
-docs/_build/
 rsstail.pyz
 .cache
 .tox
+.envrc
 

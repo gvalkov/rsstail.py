@@ -48,3 +48,5 @@ ignore = ["E265", "E241", "F403", "F401", "E401"]
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
 
+[tool.pytest.ini_options]
+pythonpath = ["src"]
