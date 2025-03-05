@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+      - name: Build
+        run: scripts/pyzgen.sh rsstail.pyz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rsstail.pyz
+          path: rsstail.pyz
