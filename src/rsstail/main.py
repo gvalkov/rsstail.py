@@ -10,8 +10,8 @@ from datetime import datetime as dt
 
 import feedparser
 
-from . import placeholders
-from . import Formatter
+from .formatter import placeholders
+from .formatter import Formatter
 
 
 logging.basicConfig(format="! %(message)s", level=logging.INFO)
