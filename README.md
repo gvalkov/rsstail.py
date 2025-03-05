@@ -100,7 +100,7 @@ $ pip install rsstail
 Or simply put the standalone rsstail script in your `$PATH` and make it
 executable:
 
-    sudo curl -L -o /usr/local/bin/rsstail https://github.com/gvalkov/rsstail.py/releases/download/v0.5.0/rsstail.pyz.zip
+    sudo curl -L -o /usr/local/bin/rsstail https://github.com/gvalkov/rsstail.py/releases/download/v0.6.0/rsstail.pyz.zip
     sudo chmod 0755 /usr/local/bin/rsstail
 
 ## Colorizing output
