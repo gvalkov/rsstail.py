@@ -1,7 +1,0 @@
-[flake8]
-# E265: block comment should start with '# '
-# E241: multiple spaces after ':'
-# F403: from . import *
-# E401: multiple imports on one line
-ignore = E265,E241,F403,E401
-max-line-length = 120

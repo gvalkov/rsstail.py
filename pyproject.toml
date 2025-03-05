@@ -1,16 +1,13 @@
 [project]
 name = "rsstail"
 version = "0.5.1"
+authors = [
+  {name = "Georgi Valkov", email = "georgi.t.valkov@gmail.com"}
+]
 description = "A command-line syndication feed monitor mimicking tail -f"
-readme = "README.rst"
-requires-python = ">=3.3"
+readme = "README.md"
 license = {file = "LICENSE.txt"}
 keywords = ["rss", "tail", "feed", "feedparser"]
-authors = [
-  {email = "georgi.t.valkov@gmail.com"},
-  {name = "Georgi Valkov"}
-]
-dependencies = ["feedparser >= 5.2.1"]
 classifiers = [
   "Environment :: Console",
   "Topic :: Utilities",
@@ -19,32 +16,35 @@ classifiers = [
   "License :: OSI Approved :: BSD License",
   "Development Status :: 5 - Production/Stable",
 ]
+requires-python = ">=3.8"
+dependencies = ["feedparser >= 6.0.11"]
+
+[project.urls]
+"Homepage" = "https://github.com/gvalkov/rsstail.py"
 
 [project.optional-dependencies]
 test = [
-  "tox >= 2.6.0",
-  "pytest >= 3.0.3",
-  "pytest-cov >= 2.3.1",
+  "tox >= 4.24.1",
+  "pytest >= 8.3.5",
+  "pytest-cov >= 6.0.0",
 ]
-devel = [
-  "bumpversion >= 0.5.3",
-  "readme-renderer >= 16.0",
-  "flake8",
-  "pep8-naming",
-]
-
-[project.urls]
-homepage = "https://github.com/gvalkov/rsstail.py"
 
 [project.scripts]
 rsstail = "rsstail.main:main"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.black]
-line_length = 120
+[tool.ruff]
+line-length = 120
 
-[tool.setuptools.package-data]
-mypkg = ["*.txt", "*.rst"]
+[tool.ruff.lint]
+ignore = ["E265", "E241", "F403", "F401", "E401"]
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+
