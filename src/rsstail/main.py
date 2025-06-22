@@ -294,7 +294,19 @@ def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
         log.debug("etag:  %s", etag)
         log.debug("mtime: %s", date_fmt(last_mtime))
 
-        feed = feedparser.parse(url, etag=etag, modified=last_mtime)
+        feed = feedparser.parse(
+            url,
+            etag=etag,
+            modified=last_mtime,
+
+            # A rudimentary web browser imitation to make some feeds behind overzealous
+            # reverse proxies work.
+            agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0"
+,
+            request_headers={
+                "Sec-GPC": "1",
+            },
+        )
 
         if feed.bozo == 1:
             safeexc = (feedparser.CharacterEncodingOverride,)
