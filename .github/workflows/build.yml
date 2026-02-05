@@ -9,13 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+
+      - name: Install uv and set the Python version
+        uses: astral-sh/setup-uv@v7
         with:
-          python-version: 3.13
+          enable-cache: true
+
       - name: Build
         run: scripts/pyzgen.sh rsstail.pyz
-      - uses: actions/upload-artifact@v4
+
+      - uses: actions/upload-artifact@v6
         with:
           name: rsstail.pyz
           path: rsstail.pyz

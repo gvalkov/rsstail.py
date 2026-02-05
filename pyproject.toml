@@ -6,14 +6,13 @@ authors = [
 ]
 description = "A command-line syndication feed monitor mimicking tail -f"
 readme = "README.md"
-license = {file = "LICENSE.txt"}
+license = "BSD-3-Clause"
 keywords = ["rss", "tail", "feed", "feedparser"]
 classifiers = [
   "Environment :: Console",
   "Topic :: Utilities",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: BSD License",
   "Development Status :: 5 - Production/Stable",
 ]
 requires-python = ">=3.9"
@@ -22,22 +21,14 @@ dependencies = ["feedparser >= 6.0.11"]
 [project.urls]
 "Homepage" = "https://github.com/gvalkov/rsstail.py"
 
-[project.optional-dependencies]
-test = [
-  "tox >= 4.24.1",
-  "pytest >= 8.3.5",
-  "pytest-cov >= 6.0.0",
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
 ]
 
 [project.scripts]
 rsstail = "rsstail.main:main"
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
 
 [tool.ruff]
 line-length = 120
@@ -59,3 +50,7 @@ filename = "src/rsstail/main.py"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+
+[build-system]
+requires = ["uv_build>=0.9.29,<0.10.0"]
+build-backend = "uv_build"
