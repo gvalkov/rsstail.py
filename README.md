@@ -47,6 +47,10 @@ formatting and additional features.
       -m --time-format <arg>  date/time format
       -f --format <arg>       output format (overrides other format options)
 
+    Request Options:
+      --user-agent <arg>      set user-agent
+      --req-header <arg>      set request header (e.g. "Sec-GPC:1")
+
     Examples:
       rsstail --timestamp --pubdate --title --author <url1> <url2> <url3>
       rsstail --reverse --title <url> <username:password@url>

@@ -58,6 +58,11 @@ def parseopt(args=None):
         opt("-f", "--format", action="store", help="output format (overrides other format options)"),
     ]
 
+    req_opts = [
+        opt("--user-agent", action="store", help="set user-agent"),
+        opt("--req-header", action="append", help="set request header (e.g. \"Sec-GPC:1\")"),
+    ]
+
     prog = os.path.basename(sys.argv[0])
     prog = prog if prog != "__main__.py" else "rsstail"
 
@@ -141,14 +146,17 @@ def parseopt(args=None):
     gen_group = optparse.OptionGroup(parser, "General Options")
     feed_group = optparse.OptionGroup(parser, "Feed Options")
     fmt_group = optparse.OptionGroup(parser, "Format Options")
+    req_group = optparse.OptionGroup(parser, "Request Options")
 
     gen_group.add_options(gen_opts)
     feed_group.add_options(feed_opts)
     fmt_group.add_options(fmt_opts)
+    req_group.add_options(req_opts)
 
     parser.add_option_group(gen_group)
     parser.add_option_group(feed_group)
     parser.add_option_group(fmt_group)
+    parser.add_option_group(req_group)
 
     if not args:
         opts, args = parser.parse_args()
@@ -294,7 +302,7 @@ def tick(feeds, opts, formatter, seen_id_hashes, iteration, stream=sys.stdout):
         log.debug("etag:  %s", etag)
         log.debug("mtime: %s", date_fmt(last_mtime))
 
-        feed = feedparser.parse(url, etag=etag, modified=last_mtime)
+        feed = feedparser.parse(url, etag=etag, modified=last_mtime, agent=opts.user_agent, request_headers=opts.req_header)
 
         if feed.bozo == 1:
             safeexc = (feedparser.CharacterEncodingOverride,)
@@ -365,6 +373,9 @@ def main():
 
     if opts.verbose:
         log.setLevel(logging.DEBUG)
+
+    if opts.req_header:
+        opts.req_header = dict(i.split(":", 2) for i in opts.req_header)
 
     if opts.newer:
         try:

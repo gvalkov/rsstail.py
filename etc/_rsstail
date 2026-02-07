@@ -29,6 +29,8 @@ _arguments -s -S \
 "--no-heading[do not show headings]" \
 "--time-format[date/time format]:arg" \
 "--format[output format (overrides other format options)]:arg" \
+"--user-agent[set user-agent]:arg" \
+"--req-header[set request header (e.g. \"Sec-GPC:1\")]:arg" \
 "-v[increase verbosity]" \
 "-V[show version and exit]" \
 "-h[show this help message and exit]" \

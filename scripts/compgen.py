@@ -76,6 +76,8 @@ def zshopts():
 
     for op in (long_opts, short_opts):
         for o, m, h in op:
+            if not o:
+                continue
             yield fmt % (o[0], escape(h), m, "")
 
 
