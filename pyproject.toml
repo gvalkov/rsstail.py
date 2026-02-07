@@ -1,6 +1,6 @@
 [project]
 name = "rsstail"
-version = "0.6.0"
+version = "0.7.0"
 authors = [
   {name = "Georgi Valkov", email = "georgi.t.valkov@gmail.com"}
 ]
@@ -37,7 +37,7 @@ line-length = 120
 ignore = ["E265", "E241", "F403", "F401", "E401"]
 
 [tool.bumpversion]
-current_version = "0.6.0"
+current_version = "0.7.0"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
